@@ -31,7 +31,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests (HTML report)
-        run: PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=html
+        env:
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+        run: npx playwright test --reporter=html
 
       - name: Upload Playwright HTML report
         if: always()
