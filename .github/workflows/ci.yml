@@ -11,25 +11,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
+
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+
+      # instala browsers e dependências do Playwright
       - run: npx playwright install --with-deps
-      # sobe o app e roda os testes (playwright.config.ts já inicia o server)
+
+      # executa testes gerando relatório HTML em ./playwright-report
       - run: PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=html
-      # salva relatório
+
+      # faz upload do relatório HTML (sempre, mesmo que falhe)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
           path: playwright-report
+          retention-days: 14
+
+      # opcional: envia também a pasta de traces/screenshots se existir
+      - name: Upload test-results (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            test-results
+          if-no-files-found: ignore
           retention-days: 7
-      # sanity checks opcionais nas rotas/health
-      - name: Health checks
-        run: |
-          curl -sSf http://127.0.0.1:3000/api/health | jq .
-          curl -sSI http://127.0.0.1:3000/ | head -n 10
