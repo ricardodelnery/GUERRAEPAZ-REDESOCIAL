@@ -55,7 +55,7 @@ jobs:
         with:
           name: playwright-html-report
           path: playwright-report/**
-          if-no-files-found: error
+          if-no-files-found: ignore
           retention-days: 7
 
       - name: Upload raw Playwright results (optional)
