@@ -1,0 +1,28 @@
+{
+  "name": "guerrapaz-redesocial",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test:e2e": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --reporter=line",
+    "ci": "npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line"
+  },
+  "dependencies": {
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.33",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  }
+}
