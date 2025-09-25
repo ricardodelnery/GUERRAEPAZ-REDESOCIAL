@@ -1,3 +1,4 @@
+import './globals.css';
 export const metadata = { title: "Guerra & Paz" };
 export const metadata = { title: "Guerra & Paz" };
 import BottomTabBar from "./components/BottomTabBar";
