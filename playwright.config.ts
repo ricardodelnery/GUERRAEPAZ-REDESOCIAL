@@ -8,12 +8,14 @@ export default defineConfig({
   use: {
     baseURL,
     headless: true,
-    trace: 'on-first-retry',
+    trace: 'on-first-retry',          // coleta trace só na 1ª tentativa após falha
+    screenshot: 'only-on-failure',    // salva screenshot apenas em falhas
+    video: 'retain-on-failure',       // mantém vídeo apenas em falhas
   },
   webServer: {
     command: 'npx next start -p 3000',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: true,
-    timeout: 120_000
+    timeout: 120_000,
   },
 });
