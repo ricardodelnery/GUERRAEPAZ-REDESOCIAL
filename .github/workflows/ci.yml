@@ -21,16 +21,19 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npx playwright install --with-deps
+      # Sobe app via playwright.config.ts e gera relatório HTML
       - run: PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=html
 
+      # Artefacto principal: relatório HTML
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
           path: playwright-report
-          if-no-files-found: ignore
+          if-no-files-found: error
           retention-days: 14
 
+      # Artefacto opcional: resultados brutos (se existir)
       - name: Upload test-results (optional)
         if: always()
         uses: actions/upload-artifact@v4
