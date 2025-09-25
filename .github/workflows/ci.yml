@@ -20,14 +20,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-
-      # Instala browsers do Playwright (e dependências do SO)
       - run: npx playwright install --with-deps
-
-      # Executa testes gerando relatório HTML (./playwright-report)
       - run: PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=html
 
-      # Artefacto: relatório HTML do Playwright (sempre, mesmo se falhar)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -36,7 +31,6 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      # Artefacto opcional: traces/screenshots (se pasta existir)
       - name: Upload test-results (optional)
         if: always()
         uses: actions/upload-artifact@v4
