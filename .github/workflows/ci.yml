@@ -45,7 +45,12 @@ jobs:
       - name: Run Playwright tests (HTML report + retries)
         env:
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
-        run: npx playwright test --reporter=html --retries=2
+        run: xvfb-run -a npx playwright test --reporter=html --retries=2
+
+      - name: Run Playwright tests (HTML report + retries)
+        env:
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+        run: xvfb-run -a npx playwright test --reporter=html --retries=2
 
       - name: Upload Playwright HTML report
         if: always()
