@@ -4,11 +4,17 @@ on:
   pull_request:
     branches: [develop, main]
   push:
-    branches: [develop]
+    branches: [develop, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -29,10 +35,10 @@ jobs:
       - name: Install Playwright browsers + OS deps
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests (HTML report)
+      - name: Run Playwright tests (HTML report + retries)
         env:
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
-        run: npx playwright test --reporter=html
+        run: npx playwright test --reporter=html --retries=2
 
       - name: Upload Playwright HTML report
         if: always()
@@ -51,3 +57,10 @@ jobs:
           path: test-results/**
           if-no-files-found: ignore
           retention-days: 7
+
+      - name: Job Summary
+        if: always()
+        run: |
+          echo "## E2E Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Artefato: **playwright-html-report**" >> $GITHUB_STEP_SUMMARY
