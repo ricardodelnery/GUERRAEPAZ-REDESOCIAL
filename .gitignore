@@ -1,14 +1,8 @@
+# dependências / builds
 node_modules/
 .next/
-out/
-dist/
-build/
-.vercel/
+playwright-report/
+coverage/
 .vscode/
+.idea/
 .DS_Store
-npm-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-*.log
-.env
-.env*.local
