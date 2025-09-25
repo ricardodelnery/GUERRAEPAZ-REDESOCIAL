@@ -45,11 +45,13 @@ jobs:
         run: npm run build
 
       - name: Run Playwright tests (HTML report + retries)
+        id: e2e
         env:
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
         run: xvfb-run -a npx playwright test --reporter=html --retries=2 --workers=2
 
       - name: Upload Playwright HTML report
+        if: ${{ always() && (steps.e2e.conclusion == 'success' || steps.e2e.conclusion == 'failure') }}
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -59,6 +61,7 @@ jobs:
           retention-days: 7
 
       - name: Upload raw Playwright results (optional)
+        if: ${{ always() && (steps.e2e.conclusion == 'success' || steps.e2e.conclusion == 'failure') }}
         if: always()
         uses: actions/upload-artifact@v4
         with:
