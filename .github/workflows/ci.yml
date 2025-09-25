@@ -20,9 +20,11 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+
+      # Playwright: browsers e libs de SO necessárias
       - run: npx playwright install --with-deps
 
-      # Executa E2E; webServer é controlado pelo playwright.config.ts
+      # Executa E2E; o webServer é controlado pelo playwright.config.ts
       - run: PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=html
 
       # Artefacto principal: relatório HTML do Playwright
