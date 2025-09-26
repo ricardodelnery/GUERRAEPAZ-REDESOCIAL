@@ -1,7 +1,7 @@
 export default function Highlights() {
   const Item = ({ t, s }: { t: string; s: string }) => (
-    <div className="min-w-40 bg-black text-white rounded-xl p-3">
-      <div className="text-lg font-semibold">{t}</div>
+    <div className="min-w-44 bg-black text-white rounded-xl p-3">
+      <div className="text-base font-semibold">{t}</div>
       <div className="text-[11px] opacity-80 mt-1">{s}</div>
     </div>
   );
@@ -13,7 +13,7 @@ export default function Highlights() {
         <Item t="Podcast" s="Podcast #23" />
         <Item t="Live" s="Live Q&A" />
       </div>
-      <div className="h-1 rounded bg-gray-200 mt-2" />
+      <div className="h-0.5 rounded bg-black/10 mt-2" />
     </div>
   );
 }
