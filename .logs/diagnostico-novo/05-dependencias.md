@@ -1,8 +1,4 @@
-=== 6. DEPENDÊNCIAS ===
-Node.js: v18.20.8
-npm: 10.8.2
-
-=== DEPENDÊNCIAS INSTALADAS ===
+=== 5. DEPENDÊNCIAS ===
 guerrapaz-redesocial@1.0.0 /workspaces/GUERRAEPAZ-REDESOCIAL
 ├── @emnapi/core@1.5.0 extraneous
 ├── @emnapi/runtime@1.5.0 extraneous
@@ -24,21 +20,10 @@ guerrapaz-redesocial@1.0.0 /workspaces/GUERRAEPAZ-REDESOCIAL
 ├── tailwindcss@4.1.13
 └── typescript@5.9.2
 
-
-=== SCRIPTS DISPONÍVEIS ===
-Lifecycle scripts included in guerrapaz-redesocial@1.0.0:
-  start
-    next start
-available via `npm run-script`:
-  dev
-    next dev
-  build
-    next build
-  lint
-    next lint
-  format
-    prettier --write .
-  test:e2e
-    PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --reporter=line
-  ci
-    npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line
+Dependências extraneous: 5
+⚠️  DEPENDÊNCIAS EXTRANEOUS ENCONTRADAS
+├── @emnapi/core@1.5.0 extraneous
+├── @emnapi/runtime@1.5.0 extraneous
+├── @emnapi/wasi-threads@1.1.0 extraneous
+├── @napi-rs/wasm-runtime@0.2.12 extraneous
+├── @tybys/wasm-util@0.10.1 extraneous

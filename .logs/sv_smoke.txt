@@ -1,0 +1,18 @@
+# MP-C.1 STRUCTURAL GREP
+DATE: 2025-09-26T12:21:19+00:00
+SEARCH_DIRS: app src
+app/page.tsx:53:          <header className="flex items-center justify-between">
+app/layout.tsx:12:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
+NO_HEADER_FOUND
+app/layout.tsx:33:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
+app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+NO_MAIN_FOUND
+app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+NO_PRIMARY_NAV
+app/layout.tsx:21:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
+NO_SECONDARY_NAV
+NO_SYSTEM_MODALS
+NO_BRAND_ARIA_LABEL
+# MP-C.2 ROUTE CHECKS
+ROOT: app/page.tsx

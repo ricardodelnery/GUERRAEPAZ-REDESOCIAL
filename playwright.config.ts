@@ -1,22 +1,29 @@
-import { defineConfig } from '@playwright/test';
-
-const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  outputDir: "test-results",
-  reporter: [["html", { open: "never" }]],
   testDir: './tests',
-  timeout: 240_000_000_000,
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
+  
   use: {
-    headless: true,
-    trace: 'on-first-retry',          // coleta trace só na 1ª tentativa após falha
-    screenshot: 'only-on-failure',    // salva screenshot apenas em falhas
-    video: 'retain-on-failure',       // mantém vídeo apenas em falhas
+    baseURL: 'http://localhost:3000',
+    trace: 'on-first-retry',
   },
+
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
+
   webServer: {
-    command: 'npx next start -p 3000',
-    url: 'http://127.0.0.1:3000',
-    reuseExistingServer: true,
-    timeout: 120_000,
+    command: 'npm run dev',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 10000, // 10 segundos
   },
 });

@@ -20,3 +20,9 @@ https://guerrapaz-redesocial.vercel.app	CSS=OK ARIA=OK HIGHLIGHTS=OK COMPOSER=OK
 https://www.guerraepaz.com	CSS=OK ARIA=OK HIGHLIGHTS=OK COMPOSER=OK
 https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=OK HIGHLIGHTS=OK MEDIA=OK
 https://www.guerraepaz.com	CSS=OK COMPOSER=OK HIGHLIGHTS=OK MEDIA=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK BRAND=OK
+https://www.guerraepaz.com	CSS=OK BRAND=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK BRAND=OK
+https://www.guerraepaz.com	CSS=OK BRAND=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK LOGO=OK FALLBACK-CSS=OK 
+https://www.guerraepaz.com	CSS=OK LOGO=OK FALLBACK-CSS=OK 

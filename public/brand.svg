@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="36" viewBox="0 0 200 36" role="img" aria-label="GUERRA É PAZ — logomarca oficial">
-  <rect width="200" height="36" fill="white"/>
-  <text x="4" y="24" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#000">GUERRA É</text>
-  <text x="120" y="24" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#E30613">PAZ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial">
+  <style>
+    .a{font:900 52px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;}
+    .r{fill:#dc2626}
+  </style>
+  <text x="0"  y="56" class="a">GUERRA</text>
+  <text x="240" y="56" class="a">É</text>
+  <text x="300" y="56" class="a r">PAZ</text>
 </svg>

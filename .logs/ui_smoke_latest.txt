@@ -1,0 +1,3 @@
+https://guerrapaz-redesocial.vercel.app	
+https://www.guerraepaz.com	
+SMOKE=GREEN

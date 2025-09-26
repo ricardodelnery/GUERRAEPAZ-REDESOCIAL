@@ -1,0 +1,40 @@
+# MP-B.1 STACK VERSIONS
+DATE: 2025-09-26T12:20:56+00:00
+NODE_BIN: /home/codespace/.nvm/versions/node/v18.20.8/bin/node
+NPM_BIN:  /home/codespace/.nvm/versions/node/v18.20.8/bin/npm
+NODE_VERSION: v18.20.8
+NPM_VERSION:  10.8.2
+PSQL_BIN: /usr/bin/psql
+PSQL_VERSION: psql (PostgreSQL) 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
+# package.json ENGINES (se existir)
+package.json not found
+# Declared library versions (grep)
+15:    "next": "14.2.33",
+16:    "react": "18.3.1",
+30:    "typescript": "^5.9.2"
+20:    "@playwright/test": "^1.55.1",
+# Found package-lock.json
+LOCKFILE_PRESENT:package-lock.json
+# EXPECTED:
+Node 18.20.8
+npm 10.8.2
+Postgres 16.9
+Next 15.5.3
+React 18.2.x
+Prisma 6.15/6.16
+Tailwind 4.1.13
+TypeScript 5.9.2
+Playwright 1.55
+Puppeteer 24.22
+# MP-B.2 PORT SCAN
+PORT 3000:
+FREE
+PORT 3037:
+FREE
+PORT 3040:
+FREE
+# MP-B.3 ENGINES & CI
+NO_PACKAGE_JSON
+WF:.github/workflows/ci.yml
+20:      - uses: actions/setup-node@v4
+22:          node-version: 22
