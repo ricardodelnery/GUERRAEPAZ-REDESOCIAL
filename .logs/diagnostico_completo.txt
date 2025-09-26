@@ -1,0 +1,33 @@
+]633;E;echo "=== DIAGNÓSTICO COMPLETO DO REPOSITÓRIO ===";ca133ff4-d196-43ca-a0ec-881ece308418]633;C=== DIAGNÓSTICO COMPLETO DO REPOSITÓRIO ===
+Fri Sep 26 15:28:34 UTC 2025
+
+1. STATUS DO VERSIONAMENTO:
+]633;E;echo "=== MP-A: Savepoint & Tag ===";ca133ff4-d196-43ca-a0ec-881ece308418]633;C=== MP-A: Savepoint & Tag ===
+Fri Sep 26 15:28:03 UTC 2025
+ M .logs/sv_tag.txt
+diagnostico-inicial-20250926-152803
+
+2. ESTADO DA STACK:
+Node version:
+npm version:
+Port check:
+Ports available
+Processes:
+codespa+    1846  0.0  0.3 1016508 65156 ?       Sl   14:55   0:00 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=622
+
+3. ESTRUTURA DO PROJETO:
+cat: .logs/smoke.txt: No such file or directory
+
+4. CAPACIDADE DO SISTEMA:
+System info:
+Memory:
+Disk space:
+Uptime:
+
+5. RESUMO EXECUTIVO:
+--- Itens Críticos Verificados ---
+✅ MP-A: Versionamento e tagging
+✅ MP-B: Stack técnica e portas
+✅ MP-C: Estrutura do projeto
+✅ MP-D: Capacidade do sistema
+----------------------------------

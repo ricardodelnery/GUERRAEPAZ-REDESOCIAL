@@ -1,80 +1,12 @@
-# MP-D.recheck (case-insensitive)
-NO_RATE_LIMIT_FOUND
-NO_ADMIN_LOGGING_HOOKS
-# MP-D.files HEADS
-== middleware.ts ==
-     1	import { NextResponse } from 'next/server';
-     2	import type { NextRequest } from 'next/server';
-     3	const WINDOW_MS = 10_000;
-     4	const LIMIT = 30;
-     5	const store: Record<string, { ts: number; count: number }> = {};
-     6	
-     7	export function middleware(req: NextRequest) {
-     8	  const ip = req.ip ?? req.headers.get('x-forwarded-for') ?? 'unknown';
-     9	  const now = Date.now();
-    10	  const k = String(ip);
-    11	  const entry = store[k] ?? { ts: now, count: 0 };
-    12	  if (now - entry.ts > WINDOW_MS) { entry.ts = now; entry.count = 0; }
-    13	  entry.count += 1; store[k] = entry;
-    14	
-    15	  if (entry.count > LIMIT) {
-    16	    console.log('[RATE-LIMIT]', k, entry.count);
-    17	    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
-    18	  }
-    19	  return NextResponse.next();
-    20	}
-    21	
-    22	export const config = {
-    23	  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
-    24	};
-== utils/logger.ts ==
-     1	export const adminLog = (...args: any[]) => {
-     2	  try { console.log('[ADMIN]', ...args); } catch {}
-     3	}
-== app/api/admin/log-test/route.ts ==
-     1	import { NextResponse } from 'next/server';
-     2	import { adminLog } from '../../../../utils/logger';
-     3	export async function GET() {
-     4	  adminLog('log-test ok', new Date().toISOString());
-     5	  return NextResponse.json({ ok: true });
-     6	}
-== sanity greps ==
-16:    console.log('[RATE-LIMIT]', k, entry.count);
-utils/logger.ts:1:export const adminLog = (...args: any[]) => {
-utils/logger.ts:2:  try { console.log('[ADMIN]', ...args); } catch {}
-app/api/admin/log-test/route.ts:2:import { adminLog } from '../../../../utils/logger';
-app/api/admin/log-test/route.ts:4:  adminLog('log-test ok', new Date().toISOString());
-# MP-D.recheckE
-middleware.ts:16:    console.log('[RATE-LIMIT]', k, entry.count);
-middleware.ts:17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
-NO_RATE_LIMIT_FOUND
-middleware.ts:16:    console.log('[RATE-LIMIT]', k, entry.count);
-app/api/admin/log-test/route.ts:2:import { adminLog } from '../../../../utils/logger';
-app/api/admin/log-test/route.ts:4:  adminLog('log-test ok', new Date().toISOString());
-utils/logger.ts:1:export const adminLog = (...args: any[]) => {
-utils/logger.ts:2:  try { console.log('[ADMIN]', ...args); } catch {}
-NO_ADMIN_LOGGING_HOOKS
-# MP-D.relint (robust)
-## RATE-LIMIT scan
-16:    console.log('[RATE-LIMIT]', k, entry.count);
-17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
-## ADMIN LOG scan (logger file)
-1:export const adminLog = (...args: any[]) => {
-2:  try { console.log('[ADMIN]', ...args); } catch {}
-## ADMIN LOG scan (route usage)
-2:import { adminLog } from '../../../../utils/logger';
-4:  adminLog('log-test ok', new Date().toISOString());
-1) O que faz · Revalida detecção de rate-limit e admin logs
-2) Resultado esperado · Greps positivos no middleware e logger/route
-3) O que confirmar · .logs/sv_rate.txt com hits e sem 'NO_*'
-4) Log/artefatos gerados · .logs/sv_rate.txt
-# RATE/ADMIN DIAG
-## RATE
-16:    console.log('[RATE-LIMIT]', k, entry.count);
-17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
-## ADMIN LOG (logger file)
-1:export const adminLog = (...args: any[]) => {
-2:  try { console.log('[ADMIN]', ...args); } catch {}
-## ADMIN LOG (route usage)
-2:import { adminLog } from '../../../../utils/logger';
-4:  adminLog('log-test ok', new Date().toISOString());
+]633;E;echo "=== MP-D: Rate-Gate Admin ===";ca133ff4-d196-43ca-a0ec-881ece308418]633;C=== MP-D: Rate-Gate Admin ===
+System info:
+Linux codespaces-16f5c3 6.8.0-1030-azure #35~22.04.1-Ubuntu SMP Mon May 26 18:08:30 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Memory:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       3.1Gi       557Mi        61Mi        12Gi        12Gi
+Swap:             0B          0B          0B
+Disk space:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop4       32G   15G   16G  49% /workspaces
+Uptime:
+ 15:28:27 up 41 min,  0 user,  load average: 0.20, 0.32, 0.39

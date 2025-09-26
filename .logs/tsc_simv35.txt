@@ -1,0 +1,7 @@
+app/sim-v35/page.tsx(134,40): error TS2322: Type 'Dispatch<SetStateAction<"feed" | "perfil">>' is not assignable to type '(k: string) => void'.
+  Types of parameters 'value' and 'k' are incompatible.
+    Type 'string' is not assignable to type 'SetStateAction<"feed" | "perfil">'.
+app/sim-v35/page.tsx(135,20): error TS2322: Type '{ open: boolean; onClose: () => void; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'open' does not exist on type 'IntrinsicAttributes'.
+app/sim-v35/page.tsx(136,20): error TS2322: Type '{ open: boolean; onClose: () => void; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'open' does not exist on type 'IntrinsicAttributes'.

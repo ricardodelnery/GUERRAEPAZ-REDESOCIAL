@@ -1,133 +1,18 @@
-# MP-B.1 STACK VERSIONS
-DATE: 2025-09-26T12:20:56+00:00
-NODE_BIN: /home/codespace/.nvm/versions/node/v18.20.8/bin/node
-NPM_BIN:  /home/codespace/.nvm/versions/node/v18.20.8/bin/npm
-NODE_VERSION: v18.20.8
-NPM_VERSION:  10.8.2
-PSQL_BIN: /usr/bin/psql
-PSQL_VERSION: psql (PostgreSQL) 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
-# package.json ENGINES (se existir)
-package.json not found
-# Declared library versions (grep)
-15:    "next": "14.2.33",
-16:    "react": "18.3.1",
-30:    "typescript": "^5.9.2"
-20:    "@playwright/test": "^1.55.1",
-# Found package-lock.json
-LOCKFILE_PRESENT:package-lock.json
-# EXPECTED:
-Node 18.20.8
-npm 10.8.2
-Postgres 16.9
-Next 15.5.3
-React 18.2.x
-Prisma 6.15/6.16
-Tailwind 4.1.13
-TypeScript 5.9.2
-Playwright 1.55
-Puppeteer 24.22
-# MP-B.2 PORT SCAN
-PORT 3000:
-FREE
-PORT 3037:
-FREE
-PORT 3040:
-FREE
-# MP-B.3 ENGINES & CI
-NO_PACKAGE_JSON
-WF:.github/workflows/ci.yml
-20:      - uses: actions/setup-node@v4
-22:          node-version: 22
-# MP-B.3.fix CI Node pin
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   .logs/p1_accessibility.txt
-	modified:   .logs/sv_boot.txt
-	modified:   .logs/sv_smoke.txt
-	modified:   .logs/sv_tag.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-commit 29d59e21522f9e0f0c0f6b1f1e10e1301879faa3
-Author: ricardodelnery <ricardodelnery@gmail.com>
-Date:   Fri Sep 26 12:25:31 2025 +0000
-
-    savepoint v4.3 SoT (pre-fix, antirregressão MP-A)
-
- .logs/00_preflight.txt                             |  10 ++
- .logs/audit/01-geral.txt                           |   7 -
- .logs/audit/02-estrutura.txt                       |  36 -----
- .logs/audit/03-criticos.txt                        |  49 -------
- .logs/audit/04-configuracoes.txt                   |  98 -------------
- .logs/audit/05-codigo-fonte.txt                    | 155 ---------------------
- .logs/audit/07-saude.txt                           |   8 --
- .logs/audit/08-deploy.txt                          |   9 --
- .logs/audit/RELATORIO-FINAL.md                     |  31 -----
- .logs/audit/dev-test.log                           |  14 --
- .logs/audit/http-test.txt                          |   1 -
- .logs/brand_build.txt                              |  44 ++++++
- .logs/brand_build_2.txt                            |  44 ++++++
- .logs/brand_deploy.txt                             |  11 ++
- .logs/brand_deploy_2.txt                           |  11 ++
- .../{audit/build-test.log => brand_fix_build.txt}  |   2 +-
- .logs/brand_fix_deploy.txt                         |   1 +
- .logs/brand_snippet.txt                            |   2 +
- .logs/build_ci_smoke.txt                           |  44 ++++++
- .logs/build_dry.txt                                |  60 ++++++++
- .logs/deploy.txt                                   |  12 ++
- .logs/deploy_ci_smoke.txt                          |  12 ++
- .logs/deploy_ui_match_fine.txt                     |  11 +-
- .logs/diagnostico-novo/00-resumo.md                |  16 +++
- .logs/diagnostico-novo/01-estado.md                |  36 +++++
- .logs/diagnostico-novo/02-arquivos-criticos.md     |  60 ++++++++
- .logs/diagnostico-novo/03-build-test.md            |  26 ++++
- .logs/diagnostico-novo/04-dev-server.md            |   6 +
- .../05-dependencias.md}                            |  31 ++---
- .logs/diagnostico-novo/06-producao.md              |  11 ++
- .logs/p1_accessibility.txt                         |   4 +
- .logs/sv_boot.txt                                  |  40 ++++++
- .logs/sv_rate.txt                                  |   3 +
- .logs/sv_smoke.txt                                 |  18 +++
- .logs/sv_tag.txt                                   |  72 ++++++++++
- .logs/ui_match_fine_2.txt                          |  44 ++++++
- .logs/ui_pass_checks.txt                           |   6 +
- .logs/ui_smoke_diag.txt                            |   2 +
- .logs/ui_smoke_latest.txt                          |   3 +
- .scripts/ui_smoke.sh                               |  35 +++++
- app/components/BrandMarkOfficial.tsx               | 138 ++----------------
- package.json                                       |   2 +-
- playwright.config.ts                               |  35 +++--
- public/brand.svg                                   |  12 +-
- test-results/.last-run.json                        |   6 +-
- 45 files changed, 686 insertions(+), 592 deletions(-)
-# MP-B.3.fix2 CI Node pin
-CI.yml node-version line:
-22:          node-version:  18.20.8
-[main ab794d2] CI: pin Node to 18.20.8 per SoT v4.3 (MP-B.3)
- Author: ricardodelnery <ricardodelnery@gmail.com>
- 1 file changed, 1 insertion(+), 1 deletion(-)
-CI_NODE_PIN_COMMITTED
-commit ab794d2d53d760992329ef304e576bb34f86c745
-Author: ricardodelnery <ricardodelnery@gmail.com>
-Date:   Fri Sep 26 12:28:12 2025 +0000
-
-    CI: pin Node to 18.20.8 per SoT v4.3 (MP-B.3)
-
- .github/workflows/ci.yml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-1) O que faz · Garante engines no package.json e CI em Node 18.20.8
-2) Resultado esperado · engines pinadas; workflow com node-version 18.20.8
-3) O que confirmar · grep em package.json e .github/workflows/ci.yml
-4) Log/artefatos gerados · .logs/sv_boot.txt
-# ENGINES & CI CHECK
-13:    "ci": "npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line"
-23:    "@types/node": "^24.5.2",
-33:  "engines": {
-34:    "node": "18.20.8",
-35:    "npm": "10.8.2"
-20:      - uses: actions/setup-node@v4
-22:          node-version:  18.20.8
+]633;E;echo "=== MP-B: Boot Guard ===";ca133ff4-d196-43ca-a0ec-881ece308418]633;C=== MP-B: Boot Guard ===
+Node version:
+v18.20.8
+npm version:
+10.8.2
+Port check:
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Ports available
+Processes:
+codespa+     600  0.6  0.8 11868120 145152 ?     Sl   14:55   0:12 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/out/server-main.js --log trace --force-disable-user-env --server-data-dir /home/codespace/.vscode-remote --accept-server-license-terms --host 127.0.0.1 --port 0 --connection-token-file /home/codespace/.vscode-remote/data/Machine/.connection-token-e3a5acfb517a443235981655413d566533107e92 --extensions-download-dir /home/codespace/.vscode-remote/extensionsCache --start-server  --enable-remote-auto-shutdown --skip-requirements-check
+codespa+     622  2.9  6.6 65927900 1081724 ?    Sl   14:55   0:57 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node --dns-result-order=ipv4first /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+codespa+     637  0.5  0.6 1355676 113452 ?      Sl   14:55   0:09 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/out/bootstrap-fork --type=fileWatcher
+codespa+    1222  0.0  0.9 1088532 148324 ?      Sl   14:55   0:01 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node --max-old-space-size=3072 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/vscode-typescript1000/abc6f8077488fe922c08/tscancellation-f6ae8b404e1a533a02dc.tmp* --globalPlugins @vscode/copilot-typescript-server-plugin --pluginProbeLocations /home/codespace/.vscode-remote/extensions/github.copilot-chat-0.31.3 --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+codespa+    1223  1.0  2.1 1273740 346708 ?      Sl   14:55   0:20 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node --max-old-space-size=3072 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /tmp/vscode-typescript1000/abc6f8077488fe922c08/tscancellation-cd96eaa8ec3f6023a5e9.tmp* --globalPlugins @vscode/copilot-typescript-server-plugin --pluginProbeLocations /home/codespace/.vscode-remote/extensions/github.copilot-chat-0.31.3 --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+codespa+    1236  0.1  0.4 1133956 81552 ?       Sl   14:55   0:02 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/out/bootstrap-fork --type=ptyHost --logsPath /home/codespace/.vscode-remote/data/logs/20250926T145509
+codespa+    1243  0.0  0.5 1047596 89200 ?       Sl   14:55   0:00 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /home/codespace/.cache/typescript/5.9 --enableTelemetry --typesMapLocation /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
+codespa+    1846  0.0  0.3 1016508 65156 ?       Sl   14:55   0:00 /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/node /vscode/bin/linux-x64/e3a5acfb517a443235981655413d566533107e92/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=622

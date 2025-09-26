@@ -1,0 +1,30 @@
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/sim-v35/page.tsx
+48:73  Warning: 'k' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+Failed to compile.
+
+./app/sim-v35/page.tsx:134:40
+Type error: Type 'Dispatch<SetStateAction<"feed" | "perfil">>' is not assignable to type '(k: string) => void'.
+  Types of parameters 'value' and 'k' are incompatible.
+    Type 'string' is not assignable to type 'SetStateAction<"feed" | "perfil">'.
+
+[0m [90m 132 |[39m       [33m<[39m[33m/[39m[33mfooter[39m[33m>[39m[0m
+[0m [90m 133 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 134 |[39m       [33m<[39m[33mBottomTabBar[39m active[33m=[39m{activeTab} setActive[33m=[39m{setActiveTab} [33m/[39m[33m>[39m[0m
+[0m [90m     |[39m                                        [31m[1m^[22m[39m[0m
+[0m [90m 135 |[39m       [33m<[39m[33mSearchSheet[39m open[33m=[39m{openSearch} onClose[33m=[39m{() [33m=>[39m setOpenSearch([36mfalse[39m)} [33m/[39m[33m>[39m[0m
+[0m [90m 136 |[39m       [33m<[39m[33mNotifDrawer[39m open[33m=[39m{openNotif} onClose[33m=[39m{() [33m=>[39m setOpenNotif([36mfalse[39m)} [33m/[39m[33m>[39m[0m
+[0m [90m 137 |[39m     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

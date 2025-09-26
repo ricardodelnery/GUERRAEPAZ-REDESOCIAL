@@ -1,167 +1,166 @@
-# MP-C.1r2 STRUCTURAL GREP (REFINE)
-DATE: 2025-09-26T12:28:26+00:00
-DIR: app
-app/page.tsx:53:          <header className="flex items-center justify-between">
-app/layout.tsx:12:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:33:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:21:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS_IN:app
-NO_BRAND_ARIA_LABEL_IN:app
-# MP-C.ROUTES.1 CREATED
-ROUTE_FILE: app/perfil/[username]/page.tsx
-ROUTE_FILE: app/post/[id]/page.tsx
-# MP-C.ROUTES.2 RECHECK
-ROUTE: app/page.tsx
-ROUTE: app/perfil/[username]/page.tsx
-ROUTE: app/post/[id]/page.tsx
-# MP-C.BRAND.OK
-NO_BRAND_ARIA_LABEL
-# MP-C.MODALS.GAP
-GAP: SYSTEM_MODALS_MISSING
-# MP-C.MODALS.1 CREATED
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
--rw-rw-rw- 1 codespace codespace 235 Sep 26 12:36 app/components/NotifDrawer.tsx
--rw-rw-rw- 1 codespace codespace 226 Sep 26 12:36 app/components/SearchSheet.tsx
-# MP-SMOKES.FINAL STRUCTURE
-app/page.tsx:53:          <header className="flex items-center justify-between">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-# MP-C.MODALS.1.fix VERIFY
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
-# MP-SMOKES.RERUN STRUCTURE
-app/page.tsx:53:          <header className="flex items-center justify-between">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-# MP-C.MODALS.verify BEFORE
-import BrandMarkOfficial from "./components/BrandMarkOfficial";
-import SearchSheet from './components/SearchSheet';
-import NotifDrawer from './components/NotifDrawer';
-import { inter } from "./fonts";
-import './globals.css';
-import BottomTabBar from "./components/BottomTabBar";
+]633;E;echo "=== MP-C: Smoke STRICT ===";ca133ff4-d196-43ca-a0ec-881ece308418]633;C=== MP-C: Smoke STRICT ===
+Project structure:
+total 460
+drwxrwxrwx+  17 codespace root        4096 Sep 26 12:36 .
+drwxr-xrwx+   5 codespace root        4096 Sep 24 23:58 ..
+drwxrwxrwx+   2 codespace codespace   4096 Sep 26 00:56 .backup_jsx
+-rw-rw-rw-    1 codespace codespace   3437 Sep 26 02:10 .backup_page_1758852612.tsx
+-rw-rw-rw-    1 codespace codespace     29 Sep 25 21:58 .ci-ping
+-rw-rw-rw-    1 codespace codespace     73 Sep 25 18:29 .env.example
+-rw-rw-rw-    1 codespace codespace     66 Sep 25 22:33 .env.local
+-rw-rw-rw-    1 codespace codespace    188 Sep 25 18:29 .eslintrc.json
+drwxrwxrwx+   8 codespace root        4096 Sep 26 15:28 .git
+drwxrwxrwx+   3 codespace codespace   4096 Sep 25 18:31 .github
+-rw-rw-rw-    1 codespace codespace    192 Sep 26 01:33 .gitignore
+drwxrwxrwx+   5 codespace codespace   4096 Sep 26 12:56 .logs
+drwxrwxrwx+   6 codespace codespace   4096 Sep 26 15:24 .next
+-rw-rw-rw-    1 codespace codespace      3 Sep 25 18:59 .nvmrc
+-rw-rw-rw-    1 codespace codespace     89 Sep 25 18:29 .prettierrc
+drwxrwxrwx+   2 codespace codespace   4096 Sep 26 03:02 .scripts
+drwxrwxrwx+   2 codespace codespace   4096 Sep 26 01:03 .vercel
+-rw-rw-rw-    1 codespace root         211 Sep 25 21:21 README.md
+drwxrwxrwx+   2 codespace codespace   4096 Sep 25 03:09 api
+drwxrwxrwx+   8 codespace codespace   4096 Sep 26 15:23 app
+-rw-rw-rw-    1 codespace codespace    223 Sep 25 16:22 cookies.txt
+-rw-rw-rw-    1 codespace codespace    223 Sep 25 16:36 cookies_apex.txt
+-rw-rw-rw-    1 codespace codespace    227 Sep 25 16:36 cookies_www.txt
+-rwxrwxrwx    1 codespace codespace   3469 Sep 25 13:00 gp_diag.sh
+-rw-rw-rw-    1 codespace codespace      0 Sep 25 11:51 guerrapaz-redesocial@1.0.0
+-rw-rw-rw-    1 codespace codespace    892 Sep 26 12:36 middleware.ts
+-rw-rw-rw-    1 codespace codespace    228 Sep 25 11:34 next-env.d.ts
+-rw-rw-rw-    1 codespace codespace     72 Sep 26 01:24 next.config.js
+drwxrwxrwx+ 321 codespace codespace  12288 Sep 26 15:09 node_modules
+-rw-rw-rw-    1 codespace codespace 211783 Sep 26 04:02 package-lock.json
+-rw-rw-rw-    1 codespace codespace   1041 Sep 26 15:08 package.json
+drwxrwxrwx+   3 codespace codespace   4096 Sep 26 04:09 playwright-report
+-rw-rw-rw-    1 codespace codespace    614 Sep 26 04:09 playwright.config.ts
+-rw-rw-rw-    1 codespace codespace    630 Sep 25 21:20 playwright.config.ts.bak
+-rw-rw-rw-    1 codespace codespace     94 Sep 26 00:14 postcss.config.js
+drwxrwxrwx+   2 codespace codespace   4096 Sep 26 03:21 public
+-rw-rw-rw-    1 codespace codespace    273 Sep 26 01:34 tailwind.config.js
+drwxrwxrwx+   3 codespace codespace   4096 Sep 26 04:09 test-results
+drwxrwxrwx+   2 codespace codespace   4096 Sep 25 18:29 tests
+-rw-rw-rw-    1 codespace codespace    581 Sep 25 11:34 tsconfig.json
+-rw-rw-rw-    1 codespace codespace  81657 Sep 26 01:00 tsconfig.tsbuildinfo
+drwxrwxrwx+   2 codespace codespace   4096 Sep 26 12:36 utils
+-rw-rw-rw-    1 codespace codespace     63 Sep 25 15:43 vercel.json
+-rwxrwxrwx    1 codespace codespace    760 Sep 25 16:36 vercel_bypass.sh
+Package.json:
+{
+  "name": "guerrapaz-redesocial",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "smoke": ".scripts/ui_smoke.sh",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test:e2e": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --reporter=line",
+    "ci": "npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line"
+  },
+  "dependencies": {
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.33",
+    "postcss": "^8.4.47",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": "18.20.8",
+    "npm": "10.8.2"
+  }
+}
+Dependencies check:
+guerrapaz-redesocial@1.0.0 /workspaces/GUERRAEPAZ-REDESOCIAL
+├── @emnapi/core@1.5.0 extraneous
+├── @emnapi/runtime@1.5.0 extraneous
+├── @emnapi/wasi-threads@1.1.0 extraneous
+├── @napi-rs/wasm-runtime@0.2.12 extraneous
+├── @playwright/test@1.55.1
+├── @tailwindcss/postcss@4.1.13
+├── @tybys/wasm-util@0.10.1 extraneous
+├── @types/node@24.5.2
+├── @types/react@19.1.13
+├── autoprefixer@10.4.20
+├── eslint-config-next@14.2.33
+├── eslint@8.57.0
+├── next@14.2.33
+├── postcss@8.4.47
+├── prettier@3.6.2
+├── react-dom@18.3.1
+├── react@18.3.1
+├── tailwindcss@4.1.13
+└── typescript@5.9.2
 
-export const metadata = { title: "Guerra & Paz" };
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="pt-BR">
-----
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
-# MP-C.MODALS.verify AFTER
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
-# MP-SMOKES.RERUN.2 STRUCTURE
-app/page.tsx:53:          <header className="flex items-center justify-between">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-# MP-C.MODALS.rerunE
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
-app/components/SearchSheet.tsx:3:export default function SearchSheet() {
-app/components/SearchSheet.tsx:6:    <div role="dialog" aria-label="SearchSheet" aria-hidden={!open} hidden={!open} />
-app/components/NotifDrawer.tsx:3:export default function NotifDrawer() {
-app/components/NotifDrawer.tsx:6:    <aside role="complementary" aria-label="NotifDrawer" aria-hidden={!open} hidden={!open} />
-app/layout.tsx:2:import SearchSheet from './components/SearchSheet';
-app/layout.tsx:3:import NotifDrawer from './components/NotifDrawer';
-app/layout.tsx:34:          <SearchSheet />
-app/layout.tsx:35:          <NotifDrawer />
-1) O que faz · Verifica presença de SearchSheet/NotifDrawer, header, main, navs, brand
-2) Resultado esperado · Smokes sem 'NO_SYSTEM_MODALS'; landmarks detectados
-3) O que confirmar · .logs/sv_smoke.txt tem todas as entradas presentes
-4) Log/artefatos gerados · .logs/sv_smoke.txt
-# SMOKE STRUCTURE (re-run)
-app/components/FeedPostCard.tsx:12:      <header className="flex items-center justify-between mb-2">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:5:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-# SMOKE STRUCTURE (modais fix)
-app/components/SearchSheet.tsx:3:export default function SearchSheet() {
-app/components/SearchSheet.tsx:6:    <div role="dialog" aria-label="SearchSheet" aria-hidden={!open} hidden={!open} />
-app/components/NotifDrawer.tsx:3:export default function NotifDrawer() {
-app/components/NotifDrawer.tsx:6:    <aside role="complementary" aria-label="NotifDrawer" aria-hidden={!open} hidden={!open} />
-app/layout.tsx:2:import SearchSheet from './components/SearchSheet';
-app/layout.tsx:3:import NotifDrawer from './components/NotifDrawer';
-app/layout.tsx:34:          <SearchSheet />
-app/layout.tsx:35:          <NotifDrawer />
-# SMOKES RERUN
-app/components/FeedPostCard.tsx:12:      <header className="flex items-center justify-between mb-2">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:5:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-# SMOKES RERUN (modais)
-2:import SearchSheet from './components/SearchSheet';
-3:import NotifDrawer from './components/NotifDrawer';
-34:          <SearchSheet />
-35:          <NotifDrawer />
-# SMOKES STRUCTURE (final)
-app/components/FeedPostCard.tsx:12:      <header className="flex items-center justify-between mb-2">
-app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
-app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
-app/perfil/[username]/page.tsx:5:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
-app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
-NO_SYSTEM_MODALS
-app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
+Key directories:
+.logs/:
+total 256
+drwxrwxrwx+  5 codespace codespace  4096 Sep 26 12:56 .
+drwxrwxrwx+ 17 codespace root       4096 Sep 26 12:36 ..
+-rw-rw-rw-   1 codespace codespace  1600 Sep 26 12:20 00_preflight.txt
+drwxrwxrwx+  2 codespace codespace  4096 Sep 26 01:25 archive
+drwxrwxrwx+  2 codespace codespace  4096 Sep 26 03:54 audit
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 03:19 brand_build.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 03:21 brand_build_2.txt
+-rw-rw-rw-   1 codespace codespace   549 Sep 26 03:20 brand_deploy.txt
+-rw-rw-rw-   1 codespace codespace   551 Sep 26 03:22 brand_deploy_2.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 03:00 brand_fix_build.txt
+-rw-rw-rw-   1 codespace codespace    77 Sep 26 03:00 brand_fix_deploy.txt
+-rw-rw-rw-   1 codespace codespace   119 Sep 26 03:00 brand_snippet.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 03:02 build_ci_smoke.txt
+-rw-rw-rw-   1 codespace codespace 26771 Sep 26 15:24 build_dry.txt
+-rw-rw-rw-   1 codespace codespace  1677 Sep 26 01:29 check_build_after_clean.txt
+-rw-rw-rw-   1 codespace codespace    81 Sep 26 01:29 check_css_prod.txt
+-rw-rw-rw-   1 codespace codespace   145 Sep 26 01:28 ci_clean.txt
+-rw-rw-rw-   1 codespace codespace   608 Sep 26 03:25 deploy.txt
+-rw-rw-rw-   1 codespace codespace   596 Sep 26 03:03 deploy_ci_smoke.txt
+-rw-rw-rw-   1 codespace codespace   409 Sep 26 02:15 deploy_now.txt
+-rw-rw-rw-   1 codespace codespace   596 Sep 26 02:19 deploy_now_2.txt
+-rw-rw-rw-   1 codespace codespace   643 Sep 26 02:21 deploy_now_3.txt
+-rw-rw-rw-   1 codespace codespace   601 Sep 26 02:33 deploy_ui_match.txt
+-rw-rw-rw-   1 codespace codespace    77 Sep 26 02:53 deploy_ui_match_fine.txt
+drwxrwxrwx+  2 codespace codespace  4096 Sep 26 03:59 diagnostico-novo
+-rw-rw-rw-   1 codespace codespace   691 Sep 26 01:27 fix_extraneous.txt
+-rw-rw-rw-   1 codespace codespace     0 Sep 26 01:25 fix_higiene.txt
+-rw-rw-rw-   1 codespace codespace    37 Sep 26 01:24 fix_next_config.txt
+-rw-rw-rw-   1 codespace codespace   691 Sep 26 01:25 fix_prune.txt
+-rw-rw-rw-   1 codespace codespace  1756 Sep 26 01:46 fix_tabbar_build.txt
+-rw-rw-rw-   1 codespace codespace    97 Sep 26 01:46 fix_tabbar_checks.txt
+-rw-rw-rw-   1 codespace codespace  1763 Sep 26 01:25 fix_tailwind_check.txt
+-rw-rw-rw-   1 codespace codespace  1677 Sep 26 01:35 green_build.txt
+-rw-rw-rw-   1 codespace codespace   934 Sep 26 01:37 green_pass_2.txt
+-rw-rw-rw-   1 codespace codespace  1677 Sep 26 01:40 green_pass_fix.txt
+-rw-rw-rw-   1 codespace codespace  5323 Sep 26 15:24 p1_accessibility.txt
+-rw-rw-rw-   1 codespace codespace  7720 Sep 26 12:54 p5_social_feed.txt
+-rw-rw-rw-   1 codespace codespace   401 Sep 26 12:57 p5_social_nav.txt
+-rw-rw-rw-   1 codespace codespace  1037 Sep 26 15:08 p5_social_profile.txt
+-rw-rw-rw-   1 codespace codespace   116 Sep 26 01:30 post_fix_diag_lockfile.txt
+-rw-rw-rw-   1 codespace codespace  4022 Sep 26 15:28 sv_boot.txt
+-rw-rw-rw-   1 codespace codespace  3947 Sep 26 15:09 sv_rate.txt
+-rw-rw-rw-   1 codespace codespace  4940 Sep 26 15:28 sv_smoke.txt
+-rw-rw-rw-   1 codespace codespace   205 Sep 26 15:28 sv_tag.txt
+-rw-rw-rw-   1 codespace codespace  1743 Sep 26 01:54 ui_match_build.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 02:48 ui_match_fine.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 02:53 ui_match_fine_2.txt
+-rw-rw-rw-   1 codespace codespace  1666 Sep 26 02:32 ui_match_now.txt
+-rw-rw-rw-   1 codespace codespace  1053 Sep 26 01:44 ui_pass.txt
+-rw-rw-rw-   1 codespace codespace  1786 Sep 26 03:20 ui_pass_checks.txt
+-rw-rw-rw-   1 codespace codespace  1743 Sep 26 02:12 ui_photo_match.txt
+-rw-rw-rw-   1 codespace codespace  1743 Sep 26 02:18 ui_photo_match_2.txt
+-rw-rw-rw-   1 codespace codespace  1743 Sep 26 02:20 ui_photo_match_3.txt
+-rw-rw-rw-   1 codespace codespace   119 Sep 26 03:03 ui_smoke_diag.txt
+-rw-rw-rw-   1 codespace codespace    81 Sep 26 03:03 ui_smoke_latest.txt
+Directories not found
