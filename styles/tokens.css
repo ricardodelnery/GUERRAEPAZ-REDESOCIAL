@@ -69,3 +69,7 @@
   --container-px: var(--container-px, 1rem);
   --header-y: var(--header-y, .5rem);
 }
+.border-brand-red-40{
+  /* aproximação visual de 40% usando color-mix */
+  border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
+}

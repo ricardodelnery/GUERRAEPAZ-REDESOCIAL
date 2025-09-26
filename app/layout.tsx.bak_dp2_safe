@@ -11,13 +11,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={` font-sans min-h-svh bg-gray-100 text-gray-900`}><UiProvider><ClientUiHost>
-        <header className="bg-white sticky top-0 z-50 border-b border-brand-red">
+        <header className="bg-white sticky top-0 z-50 border-b border-[var(--brand-red)]/40">
           <div className="max-w-7xl mx-auto px-[var(--container-px)] py-[var(--header-y)] flex items-center justify-between">
             <BrandMarkOfficial />
             <div className="flex items-center gap-1">
               <button aria-label="Buscar" className="p-2 rounded hover:bg-gray-100">🔎</button>
               <HeaderActionsClient />
-              <button className="brand-ring bg-brand-red text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
+              <button className="bg-brand-red text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
             </div>
           </div>
           <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t border-[var(--line)]">
