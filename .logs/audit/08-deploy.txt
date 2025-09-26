@@ -1,0 +1,9 @@
+=== 8. CONFIGURAÇÃO DE DEPLOY ===
+✅ vercel.json encontrado:
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build"
+}
+
+✅ .vercel/project.json encontrado:
+{"projectId":"prj_z8pDC0M83hNWqpkWw9OEZGwNbkEx","orgId":"team_phefE6SML7KBSBYAArEIy6Av","projectName":"guerrapaz-redesocial"}

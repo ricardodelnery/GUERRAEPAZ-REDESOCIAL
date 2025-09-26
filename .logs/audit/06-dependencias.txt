@@ -1,0 +1,44 @@
+=== 6. DEPENDÊNCIAS ===
+Node.js: v18.20.8
+npm: 10.8.2
+
+=== DEPENDÊNCIAS INSTALADAS ===
+guerrapaz-redesocial@1.0.0 /workspaces/GUERRAEPAZ-REDESOCIAL
+├── @emnapi/core@1.5.0 extraneous
+├── @emnapi/runtime@1.5.0 extraneous
+├── @emnapi/wasi-threads@1.1.0 extraneous
+├── @napi-rs/wasm-runtime@0.2.12 extraneous
+├── @playwright/test@1.55.1
+├── @tailwindcss/postcss@4.1.13
+├── @tybys/wasm-util@0.10.1 extraneous
+├── @types/node@24.5.2
+├── @types/react@19.1.13
+├── autoprefixer@10.4.20
+├── eslint-config-next@14.2.33
+├── eslint@8.57.0
+├── next@14.2.33
+├── postcss@8.4.47
+├── prettier@3.6.2
+├── react-dom@18.3.1
+├── react@18.3.1
+├── tailwindcss@4.1.13
+└── typescript@5.9.2
+
+
+=== SCRIPTS DISPONÍVEIS ===
+Lifecycle scripts included in guerrapaz-redesocial@1.0.0:
+  start
+    next start
+available via `npm run-script`:
+  dev
+    next dev
+  build
+    next build
+  lint
+    next lint
+  format
+    prettier --write .
+  test:e2e
+    PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --reporter=line
+  ci
+    npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line

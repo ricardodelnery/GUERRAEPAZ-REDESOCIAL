@@ -1,0 +1,4 @@
+https://guerrapaz-redesocial.vercel.app	HEADER=OK MARCA=OK
+https://www.guerraepaz.com	HEADER=OK MARCA=OK
+https://guerrapaz-redesocial.vercel.app	GRID=OK FEED=OK
+https://www.guerraepaz.com	GRID=OK FEED=OK

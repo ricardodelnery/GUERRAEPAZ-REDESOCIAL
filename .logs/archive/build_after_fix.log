@@ -1,0 +1,33 @@
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `html`. Expected jsx identifier
+   ,-[[36;1;4m/workspaces/GUERRAEPAZ-REDESOCIAL/app/layout.tsx[0m:3:1]
+ [2m3[0m | import BottomTabBar from "./components/BottomTabBar";
+ [2m4[0m | export default function RootLayout({ children }: { children: React.ReactNode }) {
+ [2m5[0m |   return (
+ [2m6[0m |     <html lang="pt-BR">
+   : [31;1m     ^^^^[0m
+ [2m7[0m |       <body className="min-h-svh bg-gray-100 text-gray-900">
+ [2m8[0m |         <header className="bg-white sticky top-0 z-50 border-b">
+ [2m9[0m |           <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/layout.tsx
+
+
+> Build failed because of webpack errors
+build_exit=1

@@ -1,0 +1,46 @@
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/components/BottomTabBar.tsx
+2:19  Warning: 'id' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+
+./app/layout.tsx
+1:8  Warning: 'BrandMarkOfficial' is defined but never used.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/7) ...
+   Generating static pages (1/7) 
+   Generating static pages (3/7) 
+   Generating static pages (5/7) 
+ ✓ Generating static pages (7/7)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    142 B          87.4 kB
+├ ○ /_not-found                          873 B          88.1 kB
+├ ƒ /api/dossie                          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/health/deep                     0 B                0 B
+├ ○ /dashboard                           142 B          87.4 kB
+└ ○ /entrar                              457 B          87.7 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/117-8b81c81bc36ef16f.js       31.7 kB
+  ├ chunks/fd9d1056-749e5812300142af.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+https://guerrapaz-redesocialogr.vercel.app	CSS=FAIL
+https://www.guerraepaz.com	CSS=OK

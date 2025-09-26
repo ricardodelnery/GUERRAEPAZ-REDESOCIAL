@@ -1,3 +1,0 @@
-=== 06-SAÚDE-PROJETO ===
-Dev server status: 52
-❌ Dev server falhou

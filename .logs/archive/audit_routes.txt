@@ -1,0 +1,7 @@
+app/api/dossie/route.js
+app/api/health/deep/route.js
+app/api/health/route.js
+app/dashboard/page.tsx
+app/entrar/page.tsx
+app/layout.tsx
+app/page.tsx

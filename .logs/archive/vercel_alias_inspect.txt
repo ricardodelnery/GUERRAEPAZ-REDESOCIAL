@@ -1,0 +1,23 @@
+DEPLOY_URL=https://guerrapaz-redesocial-e34npgp9m-ricardo-del-nery-s-projects.vercel.app
+  source                                                                       url                                                                           age    
+  guerrapaz-redesocial-6kclgs7g0-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-git-fix-e71abd-ricardo-del-nery-s-projects.vercel.app    51m    
+  guerrapaz-redesocial-26dpb1vo4-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-git-fix-5f4d18-ricardo-del-nery-s-projects.vercel.app     1h    
+  guerrapaz-redesocial-5sg6ww5df-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-git-fea-28a8b9-ricardo-del-nery-s-projects.vercel.app     2h    
+  guerrapaz-redesocial-laic629w8-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-git-tes-701909-ricardo-del-nery-s-projects.vercel.app     3h    
+  guerrapaz-redesocial-e34npgp9m-ricardo-del-nery-s-projects.vercel.app        www.guerraepaz.com                                                             7h    
+  public-r3aeta2yw-ricardo-del-nery-s-projects.vercel.app                      public-psi-puce.vercel.app                                                    22h    
+  public-r3aeta2yw-ricardo-del-nery-s-projects.vercel.app                      public-ricardo-del-nery-s-projects.vercel.app                                 22h    
+  public-r3aeta2yw-ricardo-del-nery-s-projects.vercel.app                      public-ricardodelnery-ricardo-del-nery-s-projects.vercel.app                  22h    
+  guerrapaz-redesocial-e34npgp9m-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-ricardodelnery-ricardo-del-nery-s-projects.vercel.app    24h    
+  guerrapaz-redesocial-e34npgp9m-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-ricardo-del-nery-s-projects.vercel.app                    1d    
+  guerrapaz-redesocial-e34npgp9m-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial.vercel.app                                                1d    
+  guerrapaz-redesocial-qo5l0ly1i-ricardo-del-nery-s-projects.vercel.app        guerrapaz-redesocial-git-main-ricardo-del-nery-s-projects.vercel.app           1d    
+  guerraepazquevaidarcerto-jv8n-67y0e7z9w.vercel.app                           guerraepazquevaidarcerto-jv8n-ricardo-del-nery-s-projects.vercel.app           1d    
+  guerraepazquevaidarcerto-jv8n-67y0e7z9w.vercel.app                           guerraepazquevaidarcerto-jv8n.vercel.app                                       1d    
+  guerraepazquevaidarcerto-jv8n-67y0e7z9w.vercel.app                           guerraepazquevaidarcerto-git-ed3cd9-ricardo-del-nery-s-projects.vercel.app     1d    
+  –                                                                            guerraepazquevaidarcerto-s4yw-k2ic1gd8v.vercel.app                             1d    
+  guerraepazquevaidarcerto-s4yw-r7zq3m49e.vercel.app                           guerraepazquevaidarcerto-s4yw-ricardo-del-nery-s-projects.vercel.app           1d    
+  guerraepazquevaidarcerto-s4yw-r7zq3m49e.vercel.app                           guerraepazquevaidarcerto-s4yw.vercel.app                                       1d    
+  guerraepazquevaidarcerto-s4yw-r7zq3m49e.vercel.app                           guerraepazquevaidarcerto-git-d9c337-ricardo-del-nery-s-projects.vercel.app     1d    
+  guerraepazquevaidarcerto-ph6xrwc9k-ricardo-del-nery-s-projects.vercel.app    guerraepazquevaidarcerto-ricardo-del-nery-s-projects.vercel.app                1d    
+

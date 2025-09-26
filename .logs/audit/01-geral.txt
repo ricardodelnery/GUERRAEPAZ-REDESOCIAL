@@ -1,0 +1,7 @@
+=== 1. INFORMAÇÕES GERAIS ===
+Data: Fri Sep 26 01:19:17 UTC 2025
+Diretório: /workspaces/GUERRAEPAZ-REDESOCIAL
+Usuário: codespace
+Branch: main
+Último commit: c78b61b feat(home): grid base (left/feed/right) com data-testid
+Hash: c78b61b
