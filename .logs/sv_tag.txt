@@ -171,3 +171,12 @@ GIT_STATUS_CLEAN_NOW: NO
  M .logs/sv_rate.txt
  M .logs/sv_smoke.txt
  M .logs/sv_tag.txt
+[main de224cf] chore: smokes OK (modais + rate diag), clean workspace
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 4 files changed, 50 insertions(+), 1 deletion(-)
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.7 CLEAN-ALL FINAL MESMO
+ M .logs/sv_rate.txt
+ M .logs/sv_smoke.txt
+ M .logs/sv_tag.txt
