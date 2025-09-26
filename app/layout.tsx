@@ -1,6 +1,7 @@
 import BrandMarkOfficial from "./components/BrandMarkOfficial";
 import SearchSheet from './components/SearchSheet';
-import NotifDrawer from './components/NotifDrawer';import './globals.css';
+import NotifDrawer from './components/NotifDrawer';
+import './globals.css';
 import BottomTabBar from "./components/BottomTabBar";
 
 export const metadata = { title: "Guerra & Paz" };
