@@ -1,5 +1,5 @@
-import BrandMarkOfficial from './BrandMarkOfficial';
 'use client';
+import BrandMarkOfficial from './BrandMarkOfficial';
 /** Esqueleto mínimo só p/ validar a rota sem travar o terminal.
  *  Depois vou acrescentando os blocos (BrandMark, Header, etc.) em partes pequenas. */
 export default function MobileFirstHomeSimV35() {  return (

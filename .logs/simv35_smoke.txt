@@ -1,3 +1,6 @@
 # SMOKE /sim-v35
 7:      <header className="bg-white sticky top-0 z-50 border-b">
 13:      <main className="max-w-7xl mx-auto px-4 py-6">
+# SMOKE /sim-v35 pós-fix
+2:import BrandMarkOfficial from './BrandMarkOfficial';
+9:          <BrandMarkOfficial />
