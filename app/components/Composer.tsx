@@ -8,7 +8,9 @@ export default function Composer() {
           placeholder="O que estás a pensar?"
           disabled
         />
-        <button className="bg-brand-red text-white text-sm font-semibold px-4 py-2 rounded-lg">Publicar</button>
+        <button className="bg-brand-red text-white text-sm font-semibold px-4 py-2 rounded-lg">
+          Publicar
+        </button>
       </div>
     </div>
   );
