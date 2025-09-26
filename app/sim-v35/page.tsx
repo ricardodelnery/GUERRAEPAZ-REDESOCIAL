@@ -1,4 +1,5 @@
 'use client';
+import LeftRail from './LeftRail';
 import RightRail from './RightRail';
 import PostCard from './PostCard';
 import Composer from './Composer';
@@ -17,6 +18,7 @@ export default function MobileFirstHomeSimV35() {  return (
       </header>
       <main className="max-w-7xl mx-auto px-4 py-6">
         <div className="grid grid-cols-12 gap-6">
+<aside className="hidden lg:block lg:col-span-3"><LeftRail /></aside>
 <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-6">
 <div className="bg-white p-3 rounded-lg shadow-sm"><StoriesRow /></div>
 <Composer />
