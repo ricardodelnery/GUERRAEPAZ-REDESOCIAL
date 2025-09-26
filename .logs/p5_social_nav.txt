@@ -3,3 +3,10 @@
 ROUTE: app/page.tsx
 ROUTE: app/perfil/[username]/page.tsx
 ROUTE: app/post/[id]/page.tsx
+# P5.NAV.1 CREATED
+3:    <div aria-busy="true" className="p-6 max-w-7xl mx-auto">
+# P5.NAV.2 ROUTES
+ROUTE: app/page.tsx
+ROUTE: app/perfil/[username]/page.tsx
+ROUTE: app/post/[id]/page.tsx
+5:      aria-current={active ? 'page' : undefined}

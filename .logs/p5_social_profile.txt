@@ -1,0 +1,9 @@
+# P5.PROFILE.1 CREATED
+6:export default function UserProfileHeader({ username, level='Recruta', displayName }: Props) {
+# P5.PROFILE.2 VERIFY
+2:import UserProfileHeader from '../../components/UserProfileHeader';
+5:      <UserProfileHeader username={params.username} level="Recruta" />
+# P5.PROFILE.3 SMOKE
+10:    <section aria-label="Cabeçalho de Perfil" className="bg-white border rounded-xl p-4 shadow-sm">
+12:        <div aria-label="Avatar" className="h-14 w-14 rounded-full bg-gray-100 grid place-items-center font-bold text-gray-700">{initials}</div>
+app/perfil/[username]/page.tsx:5:      <UserProfileHeader username={params.username} level="Recruta" />

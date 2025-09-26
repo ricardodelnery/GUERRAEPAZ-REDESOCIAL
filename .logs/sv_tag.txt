@@ -230,3 +230,16 @@ GIT_STATUS_CLEAN_NOW: NO
 PENDING_COUNT_AFTER: 1
 GIT_STATUS_CLEAN_NOW: NO
 # MP-A.clean-final
+[main 287d720] chore(repo): remove backups e ignora *.bak (workspace clean)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 1 file changed, 7 insertions(+)
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.commit (perfil+nav)
+ M .logs/build_dry.txt
+ M .logs/p5_social_nav.txt
+ M .logs/sv_tag.txt
+ M app/perfil/[username]/page.tsx
+?? .logs/p5_social_profile.txt
+?? app/components/UserProfileHeader.tsx
+?? app/loading.tsx
