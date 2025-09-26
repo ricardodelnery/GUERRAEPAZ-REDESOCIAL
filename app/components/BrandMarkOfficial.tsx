@@ -1,9 +1,8 @@
 export default function BrandMarkOfficial() {
   return (
-    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex h-8 items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="124" height="28" role="img" aria-label="GUERRA É PAZ — logomarca oficial">
-        <rect width="124" height="28" fill="currentColor" opacity="0.0"/>
-      </svg>
-    </span>
+    <div className="flex items-center gap-3">
+      <div className="h-8 w-8 rounded-full bg-brand-red text-white grid place-items-center font-black">G&P</div>
+      <span className="font-semibold text-[18px] leading-none">Guerra & Paz</span>
+    </div>
   );
 }

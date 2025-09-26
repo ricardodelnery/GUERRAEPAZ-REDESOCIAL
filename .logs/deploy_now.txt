@@ -1,0 +1,8 @@
+Vercel CLI 48.1.6
+Retrieving project…
+Deploying ricardo-del-nery-s-projects/guerrapaz-redesocial
+Inspect: https://vercel.com/ricardo-del-nery-s-projects/guerrapaz-redesocial/AAPFosM9xFLEAGMjCiZgx3YmPMr2 [1s]
+Production: https://guerrapaz-redesocial-fa4ybj6g3-ricardo-del-nery-s-projects.vercel.app [1s]
+https://guerrapaz-redesocial-fa4ybj6g3-ricardo-del-nery-s-projects.vercel.appQueued
+Building
+Completing

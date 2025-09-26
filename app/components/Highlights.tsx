@@ -1,17 +1,18 @@
 export default function Highlights() {
   const Item = ({ t, s }: { t: string; s: string }) => (
-    <div className="min-w-44 bg-black text-white rounded-xl p-3">
+    <div className="min-w-44 bg-black text-white rounded-xl p-4">
       <div className="text-base font-semibold">{t}</div>
-      <div className="text-[11px] opacity-80 mt-1">{s}</div>
+      <div className="text-[12px] opacity-80 mt-1">{s}</div>
     </div>
   );
   return (
-    <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+    <div className="bg-white p-4 rounded-xl shadow border border-gray-200">
       <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
         <Item t="Ucrânia" s="Análise: Ucrânia" />
         <Item t="Sahel" s="Update: Sahel" />
         <Item t="Podcast" s="Podcast #23" />
         <Item t="Live" s="Live Q&A" />
+        <Item t="Artigo" s="Artigo novo" />
       </div>
       <div className="h-0.5 rounded bg-black/10 mt-2" />
     </div>

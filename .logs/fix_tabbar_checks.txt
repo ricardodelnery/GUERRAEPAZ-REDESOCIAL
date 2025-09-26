@@ -1,0 +1,2 @@
+https://guerrapaz-redesocial.vercel.app	CSS=OK ARIA=OK
+https://www.guerraepaz.com	CSS=OK ARIA=OK

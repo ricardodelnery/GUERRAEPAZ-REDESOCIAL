@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="{` min-h-svh font-sans bg-gray-100 text-gray-900`}">
         <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-            <span aria-label="GUERRA É PAZ — logomarca oficial" className="font-black">GUERRA É PAZ</span>
+            <BrandMarkOfficial />
             <div className="flex items-center gap-1">
               <button aria-label="Buscar" className="p-2 rounded hover:bg-gray-100">🔎</button>
               <button aria-label="Notificações" className="p-2 rounded hover:bg-gray-100">🔔</button>

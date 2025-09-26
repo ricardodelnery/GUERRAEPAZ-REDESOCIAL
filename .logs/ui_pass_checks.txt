@@ -1,0 +1,22 @@
+https://guerrapaz-redesocial.vercel.app	CSS=OK ARIA=OK
+https://www.guerraepaz.com	CSS=OK ARIA=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK ARIA=OK
+https://www.guerraepaz.com	CSS=OK ARIA=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://www.guerraepaz.com	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://www.guerraepaz.com	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://www.guerraepaz.com	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://www.guerraepaz.com	CSS=OK COMPOSER=FAIL HIGHLIGHTS=FAIL
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://www.guerraepaz.com	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://www.guerraepaz.com	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://www.guerraepaz.com	CSS=OK COMPOSER=OK HIGHLIGHTS=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK ARIA=OK HIGHLIGHTS=OK COMPOSER=OK
+https://www.guerraepaz.com	CSS=OK ARIA=OK HIGHLIGHTS=OK COMPOSER=OK
+https://guerrapaz-redesocial.vercel.app	CSS=OK COMPOSER=OK HIGHLIGHTS=OK MEDIA=OK
+https://www.guerraepaz.com	CSS=OK COMPOSER=OK HIGHLIGHTS=OK MEDIA=OK
