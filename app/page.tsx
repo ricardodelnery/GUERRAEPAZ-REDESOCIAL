@@ -2,7 +2,7 @@ import Composer from "./components/Composer";
 import FeedPostCard from './components/FeedPostCard';
 import Highlights from "./components/Highlights";
 const STATIC_POSTS = [
-  { author: 'Operador Zero', handle: 'operador0', dateISO: '2025-09-26T12:00:00Z', content: 'Bem-vindo ao GUERRA export default function Home() { PAZ. Este é um post estático para o MVP Social.' }
+  { author: 'Operador Zero', handle: 'operador0', dateISO: '2025-09-26T12:00:00Z', content: 'Bem-vindo ao GUERRA & PAZ. Este é um post estático para o MVP Social.' }
 ];
 
 export default function Home() {
@@ -50,19 +50,11 @@ export default function Home() {
 
       {/* FEED (centro) */}
       <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-4" data-testid="feed">
+          {STATIC_POSTS.map((p, i) => (<FeedPostCard key={i} {...p} />))}
         <Highlights />
         <Composer />
         <Highlights />
         <Composer />
-        <article className="bg-white p-4 rounded-xl shadow border border-gray-200" data-testid="post-card">
-          <header className="flex items-center justify-between">
-            <div className="font-semibold text-sm">Autor Exemplo</div>
-            <time className="text-xs text-gray-500">2d</time>
-          </header>
-          <h3 className="mt-2 text-base font-semibold tracking-tight">Título do post</h3>
-          <p className="text-sm text-gray-600 mt-1 leading-relaxed">Conteúdo estático de exemplo do feed.</p>
-          <div className="mt-3 aspect-video rounded-lg bg-gray-100 border border-gray-200"></div>
-        </article>
       </section>
 
       {/* RIGHT (md+) */}

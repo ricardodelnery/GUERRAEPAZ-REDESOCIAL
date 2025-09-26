@@ -125,3 +125,11 @@ NO_MAP_RENDER_IN_HOME
 2:import FeedPostCard from './components/FeedPostCard';
 11:    <article role="article" aria-label={`Post de ${author}`} className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
 17:        <time className="text-xs text-gray-500" dateTime={dateISO} aria-label={`Publicado em ${human}`}>{human}</time>
+# P5.FEED.repair VERIFY
+53:          {STATIC_POSTS.map((p, i) => (<FeedPostCard key={i} {...p} />))}
+# P5.FEED.smoke
+2:import FeedPostCard from './components/FeedPostCard';
+53:          {STATIC_POSTS.map((p, i) => (<FeedPostCard key={i} {...p} />))}
+53:          {STATIC_POSTS.map((p, i) => (<FeedPostCard key={i} {...p} />))}
+11:    <article role="article" aria-label={`Post de ${author}`} className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
+17:        <time className="text-xs text-gray-500" dateTime={dateISO} aria-label={`Publicado em ${human}`}>{human}</time>
