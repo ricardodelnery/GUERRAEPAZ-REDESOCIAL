@@ -22,46 +22,46 @@ export function UiProvider({ children }: { children: React.ReactNode }) {
   const [notifOpen, setNotifOpen] = useState(false);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
 
+  const lockScroll = () => document.documentElement.classList.add('overflow-hidden');
+  const unlockScroll = () => document.documentElement.classList.remove('overflow-hidden');
+
   const openSearch: OpenFn = useCallback((_from?: Trigger) => {
     lastTriggerRef.current = _from ?? null;
     setSearchOpen(true);
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.add('overflow-hidden');
-    }
-  }, []);
-
-  const closeSearch: VoidFn = useCallback(() => {
-    setSearchOpen(false);
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.remove('overflow-hidden');
-    }
-    lastTriggerRef.current?.focus?.();
+    lockScroll();
   }, []);
 
   const openNotif: OpenFn = useCallback((_from?: Trigger) => {
     lastTriggerRef.current = _from ?? null;
     setNotifOpen(true);
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.add('overflow-hidden');
+    lockScroll();
+  }, []);
+
+  const refocusTrigger = () => {
+    const el = lastTriggerRef.current;
+    if (el && typeof el.focus === 'function') {
+      try { el.focus(); } catch {}
     }
+    lastTriggerRef.current = null;
+  };
+
+  const closeSearch: VoidFn = useCallback(() => {
+    setSearchOpen(false);
+    unlockScroll();
+    refocusTrigger();
   }, []);
 
   const closeNotif: VoidFn = useCallback(() => {
     setNotifOpen(false);
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.remove('overflow-hidden');
-    }
-    lastTriggerRef.current?.focus?.();
+    unlockScroll();
+    refocusTrigger();
   }, []);
 
-  const value: UiState = {
-    searchOpen, notifOpen,
-    openSearch, closeSearch,
-    openNotif, closeNotif,
-    lastTriggerRef
-  };
-
-  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+  return (
+    <Ctx.Provider value={{ searchOpen, notifOpen, openSearch, closeSearch, openNotif, closeNotif, lastTriggerRef }}>
+      {children}
+    </Ctx.Provider>
+  );
 }
 
 export function useUi() {
