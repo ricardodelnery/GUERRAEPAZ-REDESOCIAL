@@ -1,6 +1,5 @@
 'use client';
 import BrandMarkOfficial from './BrandMarkOfficial';
-import { useEffect, useState } from 'react';
 
 /** SIM-V35 — esqueleto mínimo
  *  Vamos colar o layout completo em partes pequenas.

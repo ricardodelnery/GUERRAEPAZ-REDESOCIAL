@@ -1,3 +1,8 @@
 /* A11y: foco visível mínimo (AA) */
 :focus-visible { outline: 2px solid #111; outline-offset: 2px; }
 a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+
+/* SIM-V35 overrides */
+.simv35-isolated header.sticky { display: none !important; }
+.simv35-isolated nav[aria-label="Navegação secundária"] { display: none !important; }
+.simv35-isolated main.max-w-7xl { padding: 0 !important; }

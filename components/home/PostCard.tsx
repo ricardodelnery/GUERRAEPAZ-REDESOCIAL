@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import CardActions from '../common/CardActions';
 
 type Props = {

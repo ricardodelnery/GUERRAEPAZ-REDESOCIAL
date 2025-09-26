@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Chip from '../common/Chip';
 
 export default function LeftRailStatic() {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function RightRailStatic() {
   return (
     <div className="space-y-4">
