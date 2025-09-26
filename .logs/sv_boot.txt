@@ -104,3 +104,18 @@ Date:   Fri Sep 26 12:25:31 2025 +0000
  public/brand.svg                                   |  12 +-
  test-results/.last-run.json                        |   6 +-
  45 files changed, 686 insertions(+), 592 deletions(-)
+# MP-B.3.fix2 CI Node pin
+CI.yml node-version line:
+22:          node-version:  18.20.8
+[main ab794d2] CI: pin Node to 18.20.8 per SoT v4.3 (MP-B.3)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+CI_NODE_PIN_COMMITTED
+commit ab794d2d53d760992329ef304e576bb34f86c745
+Author: ricardodelnery <ricardodelnery@gmail.com>
+Date:   Fri Sep 26 12:28:12 2025 +0000
+
+    CI: pin Node to 18.20.8 per SoT v4.3 (MP-B.3)
+
+ .github/workflows/ci.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)

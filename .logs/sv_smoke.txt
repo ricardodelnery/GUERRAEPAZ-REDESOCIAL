@@ -1,5 +1,5 @@
-# MP-C.1r STRUCTURAL GREP (RECHECK)
-DATE: 2025-09-26T12:25:39+00:00
+# MP-C.1r2 STRUCTURAL GREP (REFINE)
+DATE: 2025-09-26T12:28:26+00:00
 DIR: app
 app/page.tsx:53:          <header className="flex items-center justify-between">
 app/layout.tsx:12:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">

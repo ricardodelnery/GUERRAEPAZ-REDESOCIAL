@@ -116,3 +116,17 @@ GIT_STATUS_CLEAN_NOW: NO
 LAST_TAG: sv-20250926-1225_29d59e2
 # MP-A.3 COMMIT LOGS
 DATE: 2025-09-26T12:28:04+00:00
+[main ebd879d] chore(logs): captura diagnósticos MP-A/B/C (pós-savepoint)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 4 files changed, 122 insertions(+), 15 deletions(-)
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.4 CLEAN CHECK
+PENDING_COUNT: 2
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.5 CLEAN LOGS COMMIT
+DATE: 2025-09-26T12:30:09+00:00
+--- PENDING ---
+ M .logs/p1_accessibility.txt
+ M .logs/sv_boot.txt
+ M .logs/sv_smoke.txt
+ M .logs/sv_tag.txt

@@ -1,5 +1,20 @@
-# MP-C.3r A11Y GREP (RECHECK)
+# MP-C.3r2 A11Y GREP (FOCUSED)
 DIR: app
-NO_ARIA_IN:app
+app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}
+app/components/BottomTabBar.tsx:6:      aria-label={label}
+app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
+app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
+app/components/Composer.tsx:10:          aria-label="O que estás a pensar?"
+app/components/Composer.tsx:16:          <span role="img" aria-label="Anexo">📎</span>
+app/components/Composer.tsx:17:          <span role="img" aria-label="Câmera">📷</span>
+app/components/Composer.tsx:18:          <span role="img" aria-label="Localização">📍</span>
+app/layout.tsx:16:              <button aria-label="Buscar" className="p-2 rounded hover:bg-gray-100">🔎</button>
+app/layout.tsx:17:              <span className="relative inline-block"><span className="relative inline-block"><button aria-label="Notificações" className="relative p-2 rounded hover:bg-gray-100">🔔<span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></button><span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></span><span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></span>
+app/layout.tsx:21:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
+app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}
+app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
+app/components/Composer.tsx:16:          <span role="img" aria-label="Anexo">📎</span>
+app/components/Composer.tsx:17:          <span role="img" aria-label="Câmera">📷</span>
+app/components/Composer.tsx:18:          <span role="img" aria-label="Localização">📍</span>
 NO_FOCUS_STYLES_IN:app
-NO_A11Y_TODOS_IN:app
