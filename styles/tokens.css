@@ -73,3 +73,7 @@
   /* aproximação visual de 40% usando color-mix */
   border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
 }
+.border-brand-red-40{
+  /* aproximação visual de 40% usando color-mix */
+  border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
+}
