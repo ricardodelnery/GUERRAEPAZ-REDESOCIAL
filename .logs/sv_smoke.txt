@@ -134,3 +134,16 @@ app/layout.tsx:2:import SearchSheet from './components/SearchSheet';
 app/layout.tsx:3:import NotifDrawer from './components/NotifDrawer';
 app/layout.tsx:34:          <SearchSheet />
 app/layout.tsx:35:          <NotifDrawer />
+# SMOKES RERUN
+app/components/FeedPostCard.tsx:12:      <header className="flex items-center justify-between mb-2">
+app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
+app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
+app/perfil/[username]/page.tsx:5:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
+NO_SYSTEM_MODALS
+app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
+app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
