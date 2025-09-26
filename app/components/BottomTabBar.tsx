@@ -12,7 +12,7 @@ export default function BottomTabBar() {
   return (
     <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="max-w-7xl mx-auto px-2 grid grid-cols-5">
-        <Item id="feed" label="Feed" icon="🏠" active / active>
+        <Item id="feed" label="Feed" icon="🏠" active />
         <Item id="explorar" label="Explorar" icon="🔎" />
         <Item id="mapa" label="Mapa" icon="🗺️" />
         <Item id="cine" label="Cine" icon="🎬" />
