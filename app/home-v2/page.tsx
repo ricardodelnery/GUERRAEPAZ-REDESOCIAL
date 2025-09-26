@@ -2,18 +2,17 @@
 import Story from '../../components/common/Story';
 import Composer from '../../components/home/Composer';
 import PostCard from '../../components/home/PostCard';
+import LeftRailStatic from '../../components/home/LeftRailStatic';
+import RightRailStatic from '../../components/home/RightRailStatic';
 
 export default function HomeV2() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
       <div className="grid grid-cols-12 gap-6">
-        {/* LEFT SIDEBAR — lg+ (placeholder) */}
+        {/* LEFT SIDEBAR — lg+ */}
         <aside className="hidden lg:block lg:col-span-3">
-          <div className="sticky top-24 space-y-4">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <p className="text-sm font-semibold">Perfil (placeholder)</p>
-              <p className="text-xs text-gray-600 mt-1">Aqui entram ProfileCompact/Atalhos/Grupos.</p>
-            </div>
+          <div className="sticky top-24">
+            <LeftRailStatic />
           </div>
         </aside>
 
@@ -52,13 +51,10 @@ export default function HomeV2() {
           </div>
         </section>
 
-        {/* RIGHT SIDEBAR — md+ (placeholder) */}
+        {/* RIGHT SIDEBAR — md+ */}
         <aside className="hidden md:block md:col-span-4 lg:col-span-3">
-          <div className="sticky top-24 space-y-4">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="font-semibold">Recomendações (placeholder)</h4>
-              <p className="text-sm text-gray-600 mt-2">Aqui entram cartões e a Loja/Eventos.</p>
-            </div>
+          <div className="sticky top-24">
+            <RightRailStatic />
           </div>
         </aside>
       </div>
