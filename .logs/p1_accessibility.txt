@@ -18,3 +18,31 @@ app/components/Composer.tsx:16:          <span role="img" aria-label="Anexo">�
 app/components/Composer.tsx:17:          <span role="img" aria-label="Câmera">📷</span>
 app/components/Composer.tsx:18:          <span role="img" aria-label="Localização">📍</span>
 NO_FOCUS_STYLES_IN:app
+# MP-C.A11Y.1 VERIFY
+import BrandMarkOfficial from "./components/BrandMarkOfficial";
+import { inter } from "./fonts";
+import './globals.css';
+import BottomTabBar from "./components/BottomTabBar";
+
+# MP-C.A11Y.2 RECHECK
+NO_FOCUS_STYLES_IN:app
+app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}
+# MP-C.A11Y.1.fix SHOW
+== app/globals.css ==
+/* A11y: foco visível mínimo (AA) */
+:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+== layout import head ==
+import BrandMarkOfficial from "./components/BrandMarkOfficial";
+import { inter } from "./fonts";
+import './globals.css';
+import BottomTabBar from "./components/BottomTabBar";
+
+export const metadata = { title: "Guerra & Paz" };
+== grep focus-visible ==
+2::focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+3:a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+# MP-C.A11Y.2 RECHECK (global)
+app/globals.css:2::focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+app/globals.css:3:a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}

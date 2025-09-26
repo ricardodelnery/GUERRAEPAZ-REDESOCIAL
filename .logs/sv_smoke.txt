@@ -10,3 +10,14 @@ app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" c
 app/layout.tsx:21:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
 NO_SYSTEM_MODALS_IN:app
 NO_BRAND_ARIA_LABEL_IN:app
+# MP-C.ROUTES.1 CREATED
+ROUTE_FILE: app/perfil/[username]/page.tsx
+ROUTE_FILE: app/post/[id]/page.tsx
+# MP-C.ROUTES.2 RECHECK
+ROUTE: app/page.tsx
+ROUTE: app/perfil/[username]/page.tsx
+ROUTE: app/post/[id]/page.tsx
+# MP-C.BRAND.OK
+NO_BRAND_ARIA_LABEL
+# MP-C.MODALS.GAP
+GAP: SYSTEM_MODALS_MISSING

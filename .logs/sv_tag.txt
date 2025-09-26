@@ -130,3 +130,24 @@ DATE: 2025-09-26T12:30:09+00:00
  M .logs/sv_boot.txt
  M .logs/sv_smoke.txt
  M .logs/sv_tag.txt
+[main 9d6d020] chore(logs): atualiza diagnósticos (clean up pós MP-B.3)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 4 files changed, 49 insertions(+), 5 deletions(-)
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.5b CLEAN ALL (code + logs)
+DATE: 2025-09-26T12:33:55+00:00
+--- BEFORE ---
+ M .logs/build_dry.txt
+ M .logs/p1_accessibility.txt
+ M .logs/sv_smoke.txt
+ M .logs/sv_tag.txt
+?? app/perfil/
+?? app/post/
+[main e9b1ab9] feat(routes,a11y): mínimos de /perfil/[username], /post/[id] e foco base (SoT v4.3)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 2 files changed, 16 insertions(+)
+ create mode 100644 app/perfil/[username]/page.tsx
+ create mode 100644 app/post/[id]/page.tsx
+PENDING_COUNT_AFTER: 4
+GIT_STATUS_CLEAN_NOW: NO
