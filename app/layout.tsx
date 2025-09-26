@@ -21,9 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
             <div className="max-w-7xl mx-auto px-4 flex items-center gap-6 py-2 text-sm">
               <a className="text-brand-red font-medium" href="#">Feed</a>
-              <a className="text-gray-600 hover:text-brand-red" href="#">Explorar</a>
-              <a className="text-gray-600 hover:text-brand-red" href="#">Mapa</a>
-              <a className="text-gray-600 hover:text-brand-red" href="#">Cinemateca</a>
+              <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Explorar</a>
+              <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Mapa</a>
+              <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Cinemateca</a>
               <a className="text-gray-600 hover:text-brand-red ml-auto" href="#">Loja</a>
             </div>
           </nav>
