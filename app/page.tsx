@@ -18,6 +18,8 @@ import Highlights from "./components/Highlights";
       <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-4" data-testid="feed">
         <Highlights />
         <Composer />
+        <Highlights />
+        <Composer />
         <article className="bg-white p-4 rounded-xl shadow-sm" data-testid="post-card">
           <header className="flex items-center justify-between">
             <div className="font-semibold text-sm">Autor Exemplo</div>
