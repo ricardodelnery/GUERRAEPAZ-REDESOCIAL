@@ -1,0 +1,4 @@
+app/page.jsx
+app/entrar/page.jsx
+app/dashboard/page.jsx
+app/layout.jsx

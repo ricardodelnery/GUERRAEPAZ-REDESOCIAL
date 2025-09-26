@@ -1,0 +1,11 @@
+MP-B Boot Guard 2025-09-25T22:32:27Z
+node=v22.17.0 npm=9.8.1 psql=n/a
+ERR: Node deve ser 18.20.8
+MP-B 2025-09-25T22:33:06Z
+node=v22.17.0 npm=9.8.1
+psql=n/a
+fix-node: 2025-09-25T22:33:58Z node=v22.17.0 npm=10.8.2
+fix-psql: 2025-09-25T22:34:15Z psql=psql (PostgreSQL) 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
+check: 2025-09-25T22:37:06Z node=v22.17.0 npm=10.8.2 psql=psql (PostgreSQL) 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
+fix-node-activate: 2025-09-25T22:37:13Z node=v22.17.0 npm=10.8.2
+check2: 2025-09-25T22:37:56Z node=v18.20.8 npm=10.8.2 psql=psql (PostgreSQL) 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)

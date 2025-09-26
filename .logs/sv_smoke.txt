@@ -1,0 +1,16 @@
+MP-C 2025-09-25T22:39:58Z — scan básico
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/click-events-have-key-events-test.js:67:    { code: '<header onClick={() => void 0} />;', errors: [expectedError] },
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/no-noninteractive-element-to-interactive-role-test.js:191:  { code: '<header role="button" />;' },
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/no-static-element-interactions-test.js:317:  { code: '<header onClick={() => {}} />;', errors: [expectedError] },
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/prefer-tag-over-role-test.js:60:      errors: [expectedError('banner', '<header>')],
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/no-interactive-element-to-noninteractive-role-test.js:128:  { code: '<header role="button" />;' },
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/no-noninteractive-element-interactions-test.js:124:  { code: '<header onClick={() => {}} />;' },
+./node_modules/eslint-plugin-jsx-a11y/__tests__/src/rules/interactive-supports-focus-test.js:112:  { code: '<header onClick={() => void 0} />;' },
+./node_modules/eslint-plugin-jsx-a11y/docs/rules/heading-has-content.md:39:  <Header>Create Account</Header>
+./node_modules/eslint-plugin-jsx-a11y/docs/rules/alt-text.md:77:  <header>
+./node_modules/eslint-plugin-jsx-a11y/docs/rules/prefer-tag-over-role.md:15:<header>...</header>
+./node_modules/eslint-plugin-jsx-a11y/lib/util/isNonInteractiveElement.js:121:  // <header> elements do not technically have semantics, unless the
+./node_modules/undici-types/header.d.ts:157:  [K in HeaderNames | Lowercase<HeaderNames>]?: Lowercase<K> extends keyof KnownHeaderValues
+./node_modules/next/dist/server/config-shared.d.ts:412:    headers?: () => Promise<Header[]>;
+--- contagens e marca ---
+20

@@ -1,0 +1,96 @@
+=== 02-CONFIGURACOES ===
+--- next.config.js ---
+❌ AUSENTE
+
+--- tailwind.config.js ---
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  theme: { extend: {} },
+  plugins: [],
+};
+
+--- postcss.config.js ---
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+    autoprefixer: {},
+  },
+};
+
+--- tsconfig.json ---
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+--- vercel.json ---
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build"
+}
+
+--- package.json ---
+{
+  "name": "guerrapaz-redesocial",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test:e2e": "PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 playwright test --reporter=line",
+    "ci": "npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line"
+  },
+  "dependencies": {
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.33",
+    "postcss": "^8.4.47",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}
+
