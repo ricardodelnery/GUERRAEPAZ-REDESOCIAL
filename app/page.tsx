@@ -20,7 +20,7 @@ export default function Home() {
             <time className="text-xs text-gray-500">2d</time>
           </header>
           <h3 className="mt-2 text-base font-semibold tracking-tight">Título do post</h3>
-          <p className="text-sm text-gray-700 mt-1">Conteúdo estático de exemplo do feed.</p>
+          <p className="text-sm text-gray-600 mt-1 leading-relaxed">Conteúdo estático de exemplo do feed.</p>
         </article>
       </section>
 
