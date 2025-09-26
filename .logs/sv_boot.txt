@@ -38,3 +38,69 @@ NO_PACKAGE_JSON
 WF:.github/workflows/ci.yml
 20:      - uses: actions/setup-node@v4
 22:          node-version: 22
+# MP-B.3.fix CI Node pin
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .logs/p1_accessibility.txt
+	modified:   .logs/sv_boot.txt
+	modified:   .logs/sv_smoke.txt
+	modified:   .logs/sv_tag.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+commit 29d59e21522f9e0f0c0f6b1f1e10e1301879faa3
+Author: ricardodelnery <ricardodelnery@gmail.com>
+Date:   Fri Sep 26 12:25:31 2025 +0000
+
+    savepoint v4.3 SoT (pre-fix, antirregressão MP-A)
+
+ .logs/00_preflight.txt                             |  10 ++
+ .logs/audit/01-geral.txt                           |   7 -
+ .logs/audit/02-estrutura.txt                       |  36 -----
+ .logs/audit/03-criticos.txt                        |  49 -------
+ .logs/audit/04-configuracoes.txt                   |  98 -------------
+ .logs/audit/05-codigo-fonte.txt                    | 155 ---------------------
+ .logs/audit/07-saude.txt                           |   8 --
+ .logs/audit/08-deploy.txt                          |   9 --
+ .logs/audit/RELATORIO-FINAL.md                     |  31 -----
+ .logs/audit/dev-test.log                           |  14 --
+ .logs/audit/http-test.txt                          |   1 -
+ .logs/brand_build.txt                              |  44 ++++++
+ .logs/brand_build_2.txt                            |  44 ++++++
+ .logs/brand_deploy.txt                             |  11 ++
+ .logs/brand_deploy_2.txt                           |  11 ++
+ .../{audit/build-test.log => brand_fix_build.txt}  |   2 +-
+ .logs/brand_fix_deploy.txt                         |   1 +
+ .logs/brand_snippet.txt                            |   2 +
+ .logs/build_ci_smoke.txt                           |  44 ++++++
+ .logs/build_dry.txt                                |  60 ++++++++
+ .logs/deploy.txt                                   |  12 ++
+ .logs/deploy_ci_smoke.txt                          |  12 ++
+ .logs/deploy_ui_match_fine.txt                     |  11 +-
+ .logs/diagnostico-novo/00-resumo.md                |  16 +++
+ .logs/diagnostico-novo/01-estado.md                |  36 +++++
+ .logs/diagnostico-novo/02-arquivos-criticos.md     |  60 ++++++++
+ .logs/diagnostico-novo/03-build-test.md            |  26 ++++
+ .logs/diagnostico-novo/04-dev-server.md            |   6 +
+ .../05-dependencias.md}                            |  31 ++---
+ .logs/diagnostico-novo/06-producao.md              |  11 ++
+ .logs/p1_accessibility.txt                         |   4 +
+ .logs/sv_boot.txt                                  |  40 ++++++
+ .logs/sv_rate.txt                                  |   3 +
+ .logs/sv_smoke.txt                                 |  18 +++
+ .logs/sv_tag.txt                                   |  72 ++++++++++
+ .logs/ui_match_fine_2.txt                          |  44 ++++++
+ .logs/ui_pass_checks.txt                           |   6 +
+ .logs/ui_smoke_diag.txt                            |   2 +
+ .logs/ui_smoke_latest.txt                          |   3 +
+ .scripts/ui_smoke.sh                               |  35 +++++
+ app/components/BrandMarkOfficial.tsx               | 138 ++----------------
+ package.json                                       |   2 +-
+ playwright.config.ts                               |  35 +++--
+ public/brand.svg                                   |  12 +-
+ test-results/.last-run.json                        |   6 +-
+ 45 files changed, 686 insertions(+), 592 deletions(-)

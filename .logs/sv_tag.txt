@@ -70,3 +70,49 @@ DATE: 2025-09-26T12:25:23+00:00
  19 files changed, 50 insertions(+), 656 deletions(-)
 # MP-A.2 SAVEPOINT CREATE
 DATE: 2025-09-26T12:25:31+00:00
+[main 29d59e2] savepoint v4.3 SoT (pre-fix, antirregressão MP-A)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 45 files changed, 686 insertions(+), 592 deletions(-)
+ create mode 100644 .logs/00_preflight.txt
+ delete mode 100644 .logs/audit/01-geral.txt
+ delete mode 100644 .logs/audit/02-estrutura.txt
+ delete mode 100644 .logs/audit/03-criticos.txt
+ delete mode 100644 .logs/audit/04-configuracoes.txt
+ delete mode 100644 .logs/audit/05-codigo-fonte.txt
+ delete mode 100644 .logs/audit/07-saude.txt
+ delete mode 100644 .logs/audit/08-deploy.txt
+ delete mode 100644 .logs/audit/RELATORIO-FINAL.md
+ delete mode 100644 .logs/audit/dev-test.log
+ delete mode 100644 .logs/audit/http-test.txt
+ create mode 100644 .logs/brand_build.txt
+ create mode 100644 .logs/brand_build_2.txt
+ create mode 100644 .logs/brand_deploy.txt
+ create mode 100644 .logs/brand_deploy_2.txt
+ rename .logs/{audit/build-test.log => brand_fix_build.txt} (95%)
+ create mode 100644 .logs/brand_fix_deploy.txt
+ create mode 100644 .logs/brand_snippet.txt
+ create mode 100644 .logs/build_ci_smoke.txt
+ create mode 100644 .logs/build_dry.txt
+ create mode 100644 .logs/deploy.txt
+ create mode 100644 .logs/deploy_ci_smoke.txt
+ create mode 100644 .logs/diagnostico-novo/00-resumo.md
+ create mode 100644 .logs/diagnostico-novo/01-estado.md
+ create mode 100644 .logs/diagnostico-novo/02-arquivos-criticos.md
+ create mode 100644 .logs/diagnostico-novo/03-build-test.md
+ create mode 100644 .logs/diagnostico-novo/04-dev-server.md
+ rename .logs/{audit/06-dependencias.txt => diagnostico-novo/05-dependencias.md} (55%)
+ create mode 100644 .logs/diagnostico-novo/06-producao.md
+ create mode 100644 .logs/p1_accessibility.txt
+ create mode 100644 .logs/sv_boot.txt
+ create mode 100644 .logs/sv_rate.txt
+ create mode 100644 .logs/sv_smoke.txt
+ create mode 100644 .logs/sv_tag.txt
+ create mode 100644 .logs/ui_match_fine_2.txt
+ create mode 100644 .logs/ui_smoke_diag.txt
+ create mode 100644 .logs/ui_smoke_latest.txt
+ create mode 100755 .scripts/ui_smoke.sh
+TAG_CREATED: sv-20250926-1225_29d59e2
+GIT_STATUS_CLEAN_NOW: NO
+LAST_TAG: sv-20250926-1225_29d59e2
+# MP-A.3 COMMIT LOGS
+DATE: 2025-09-26T12:28:04+00:00
