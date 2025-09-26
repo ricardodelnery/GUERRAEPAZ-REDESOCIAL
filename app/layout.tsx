@@ -1,3 +1,4 @@
+import HeaderActionsClient from '../components/shell/HeaderActionsClient';
 import BrandMarkOfficial from "./components/BrandMarkOfficial";
 import { UiProvider } from '../lib/ui/UiContext';
 import ClientUiHost from '../components/shell/ClientUiHost';
@@ -29,7 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Academia</a>
         </div>
           </nav>
-        </header>
+          <HeaderActionsClient />
+    </header>
 
         <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
 
