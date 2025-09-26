@@ -612,3 +612,103 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
 4:10  Warning: 'inter' is defined but never used.  no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/components/BottomTabBar.tsx
+2:19  Warning: 'id' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+
+./app/layout.tsx
+4:10  Warning: 'inter' is defined but never used.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/8) ...
+   Generating static pages (2/8) 
+   Generating static pages (4/8) 
+[ADMIN] log-test ok 2025-09-26T15:23:37.196Z
+   Generating static pages (6/8) 
+ ✓ Generating static pages (8/8)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    153 B          87.4 kB
+├ ○ /_not-found                          873 B          88.1 kB
+├ ○ /api/admin/log-test                  0 B                0 B
+├ ƒ /api/dossie                          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/health/deep                     0 B                0 B
+├ ○ /dashboard                           153 B          87.4 kB
+├ ○ /entrar                              457 B          87.7 kB
+├ ƒ /perfil/[username]                   153 B          87.4 kB
+└ ƒ /post/[id]                           152 B          87.4 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/117-7fb362acdd9d1bcd.js       31.7 kB
+  ├ chunks/fd9d1056-3eee857bde8f3b06.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+ƒ Middleware                             26.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/components/BottomTabBar.tsx
+2:19  Warning: 'id' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+
+./app/layout.tsx
+4:10  Warning: 'inter' is defined but never used.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/8) ...
+[ADMIN] log-test ok 2025-09-26T15:24:04.140Z
+   Generating static pages (2/8) 
+   Generating static pages (4/8) 
+   Generating static pages (6/8) 
+ ✓ Generating static pages (8/8)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    153 B          87.4 kB
+├ ○ /_not-found                          873 B          88.1 kB
+├ ○ /api/admin/log-test                  0 B                0 B
+├ ƒ /api/dossie                          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/health/deep                     0 B                0 B
+├ ○ /dashboard                           153 B          87.4 kB
+├ ○ /entrar                              457 B          87.7 kB
+├ ƒ /perfil/[username]                   153 B          87.4 kB
+└ ƒ /post/[id]                           152 B          87.4 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/117-7fb362acdd9d1bcd.js       31.7 kB
+  ├ chunks/fd9d1056-3eee857bde8f3b06.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+ƒ Middleware                             26.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
