@@ -200,3 +200,15 @@ GIT_STATUS_CLEAN_NOW: NO
 ?? .logs/p5_social_feed.txt
 ?? .logs/p5_social_nav.txt
 ?? app/components/FeedPostCard.tsx
+[main 235872e] feat(feed): render estático no / (FeedPostCard + STATIC_POSTS.map)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 6 files changed, 154 insertions(+)
+ create mode 100644 .logs/p5_social_feed.txt
+ create mode 100644 .logs/p5_social_nav.txt
+PENDING_COUNT_AFTER: 2
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.9b CLEAN ALL (feed + logs)
+ M .logs/build_dry.txt
+ M .logs/p5_social_feed.txt
+ M .logs/sv_tag.txt
+?? app/components/FeedPostCard.tsx
