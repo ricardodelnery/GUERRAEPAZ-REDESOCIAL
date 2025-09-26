@@ -1,6 +1,6 @@
 import BrandMarkOfficial from "./components/BrandMarkOfficial";
-import SearchSheet from './components/SearchSheet';
-import NotifDrawer from './components/NotifDrawer';
+import { UiProvider } from '../lib/ui/UiContext';
+import ClientUiHost from '../components/shell/ClientUiHost';
 import './globals.css';
 import BottomTabBar from "./components/BottomTabBar";
 
@@ -9,7 +9,7 @@ export const metadata = { title: "Guerra & Paz" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={` font-sans min-h-svh bg-gray-100 text-gray-900`}>
+      <body className={` font-sans min-h-svh bg-gray-100 text-gray-900`}><UiProvider><ClientUiHost>
         <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
             <BrandMarkOfficial />
@@ -30,8 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
           </nav>
         </header>
-          <SearchSheet />
-          <NotifDrawer />
 
         <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
 
@@ -40,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         <BottomTabBar />
-      </body>
+      </ClientUiHost></UiProvider></body>
     </html>
   );
 }
