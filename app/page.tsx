@@ -1,1 +1,1 @@
-export { default } from './sim-v35/page';
+export { default } from './home-v2/page';
