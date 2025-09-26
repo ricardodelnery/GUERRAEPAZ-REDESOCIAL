@@ -1,4 +1,5 @@
 import BrandMarkOfficial from "./components/BrandMarkOfficial";
+import { inter } from "./fonts";
 import './globals.css';
 import BottomTabBar from "./components/BottomTabBar";
 
@@ -7,8 +8,8 @@ export const metadata = { title: "Guerra & Paz" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-svh font-sans" bg-gray-100 text-gray-900">
-        <header className="bg-white sticky top-0 z-50 border-b">
+      <body className="{` min-h-svh font-sans bg-gray-100 text-gray-900`}">
+        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
             <span aria-label="GUERRA É PAZ — logomarca oficial" className="font-black">GUERRA É PAZ</span>
             <div className="flex items-center gap-1">
@@ -19,11 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
             <div className="max-w-7xl mx-auto px-4 flex items-center gap-6 py-2 text-sm">
-              <a className="text-red-600 font-medium" href="#">Feed</a>
-              <a className="text-gray-600 hover:text-red-600" href="#">Explorar</a>
-              <a className="text-gray-600 hover:text-red-600" href="#">Mapa</a>
-              <a className="text-gray-600 hover:text-red-600" href="#">Cinemateca</a>
-              <a className="text-gray-600 hover:text-red-600 ml-auto" href="#">Loja</a>
+              <a className="text-brand-red font-medium" href="#">Feed</a>
+              <a className="text-gray-600 hover:text-brand-red" href="#">Explorar</a>
+              <a className="text-gray-600 hover:text-brand-red" href="#">Mapa</a>
+              <a className="text-gray-600 hover:text-brand-red" href="#">Cinemateca</a>
+              <a className="text-gray-600 hover:text-brand-red ml-auto" href="#">Loja</a>
             </div>
           </nav>
         </header>
