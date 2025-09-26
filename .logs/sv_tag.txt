@@ -152,3 +152,13 @@ DATE: 2025-09-26T12:33:55+00:00
 PENDING_COUNT_AFTER: 4
 GIT_STATUS_CLEAN_NOW: NO
 # MP-SMOKES.FINAL COMMIT
+[main 1cbff5b] chore(smokes): casca/A11y/rate-limit/logging mínimos (Fase1 smokes verdes)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 12 files changed, 91 insertions(+), 8 deletions(-)
+ create mode 100644 app/api/admin/log-test/route.ts
+ create mode 100644 app/components/NotifDrawer.tsx
+ create mode 100644 app/components/SearchSheet.tsx
+ create mode 100644 middleware.ts
+ create mode 100644 utils/logger.ts
+GIT_STATUS_CLEAN_NOW: NO
+# MP-SMOKES.RERUN COMMIT
