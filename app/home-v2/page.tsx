@@ -1,6 +1,7 @@
 // server component por padrão (sem "use client")
 import Story from '../../components/common/Story';
 import Composer from '../../components/home/Composer';
+import PostCard from '../../components/home/PostCard';
 
 export default function HomeV2() {
   return (
