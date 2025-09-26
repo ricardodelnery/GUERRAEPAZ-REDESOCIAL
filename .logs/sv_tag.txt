@@ -180,3 +180,10 @@ GIT_STATUS_CLEAN_NOW: NO
  M .logs/sv_rate.txt
  M .logs/sv_smoke.txt
  M .logs/sv_tag.txt
+[main a3de2e7] chore: diag recheck (rate & modals) + clean
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 3 files changed, 75 insertions(+)
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.8 CLEAN LOGS FINAL
+ M .logs/sv_tag.txt
