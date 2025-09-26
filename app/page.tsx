@@ -4,11 +4,13 @@ export default function Home() {
       {/* LEFT (lg+) */}
       <aside className="hidden lg:block lg:col-span-3" data-testid="home-left">
         <div className="sticky top-24 space-y-4">
+        <div className="sticky top-24 space-y-4">
           <div className="bg-white p-4 rounded-xl shadow-sm">Perfil compacto</div>
           <div className="bg-white p-4 rounded-xl shadow-sm">Atalhos</div>
           <div className="bg-white p-4 rounded-xl shadow-sm">Grupos</div>
         </div>
-      </aside>
+              </div>
+            </aside>
 
       {/* FEED (centro) */}
       <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-4" data-testid="feed">
@@ -24,6 +26,11 @@ export default function Home() {
 
       {/* RIGHT (md+) */}
       <aside className="hidden md:block md:col-span-4 lg:col-span-3" data-testid="home-right">
+        <div className="sticky top-24 space-y-4">
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">Recomendações</div>
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">Loja</div>
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">Eventos</div>
+        </div>
         <div className="sticky top-24 space-y-4">
           <div className="bg-white p-4 rounded-xl shadow-sm">Recomendações</div>
           <div className="bg-white p-4 rounded-xl shadow-sm">Loja</div>
