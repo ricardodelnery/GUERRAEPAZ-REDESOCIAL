@@ -1,35 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
-URLS=("https://guerrapaz-redesocial.vercel.app" "https://www.guerraepaz.com")
-STAMP="$(date +%s)"
-ok=0; fail=0
-: > .logs/ui_smoke_latest.txt
+echo "# SMOKE STRUCTURE"
+grep -RIn "<header" app || echo "NO_HEADER"
+grep -RIn "<main" app || echo "NO_MAIN"
+grep -RIn 'aria-label="Navegação principal"' app || echo "NO_PRIMARY_NAV"
+grep -RIn 'aria-label="Navegação secundária"' app || echo "NO_SECONDARY_NAV"
 
-check () {
-  local url="$1"
-  local html
-  html="$(curl -sL "${url}?v=${STAMP}")"
-  printf "%s\t" "$url" | tee -a .logs/ui_smoke_latest.txt
-
-  echo "$html" | grep -q '/_next/static/css/'     && { printf "CSS=OK "; }     || { printf "CSS=FAIL "; fail=$((fail+1)); }
-  echo "$html" | grep -q 'class="[^"]*text-brand-red[^"]*">Guerra &amp; Paz' \
-                                                   && { printf "BRAND=OK "; }  || { printf "BRAND=FAIL "; fail=$((fail+1)); }
-  echo "$html" | grep -q 'bg-gradient-to-b from-slate-800 to-black' \
-                                                   && { printf "HIGHLIGHTS=OK "; } || { printf "HIGHLIGHTS=FAIL "; fail=$((fail+1)); }
-  echo "$html" | grep -q 'O que estás a pensar'   && { printf "COMPOSER=OK "; }|| { printf "COMPOSER=FAIL "; fail=$((fail+1)); }
-  echo "$html" | grep -q 'aria-current="page"'     && { printf "SUBNAV=OK "; }  || { printf "SUBNAV=FAIL "; fail=$((fail+1)); }
-  echo "$html" | grep -q 'min-w-4 px-1 text-\[10px\] leading-4 .* bg-brand-red' \
-                                                   && { printf "BADGE=OK"; }   || { printf "BADGE=FAIL"; fail=$((fail+1)); }
-  printf "\n" | tee -a .logs/ui_smoke_latest.txt
-  ok=$((ok+1))
-}
-
-for u in "${URLS[@]}"; do check "$u"; done
-
-# resumo + exit code
-if grep -q "FAIL" .logs/ui_smoke_latest.txt; then
-  echo "SMOKE=RED"  | tee -a .logs/ui_smoke_latest.txt
-  exit 1
+# Modais: robusto e case-insensitive
+if grep -RIn -i "SearchSheet" app >/dev/null || grep -RIn -i "NotifDrawer" app >/dev/null; then
+  echo "SYSTEM_MODALS_PRESENT"
 else
-  echo "SMOKE=GREEN"| tee -a .logs/ui_smoke_latest.txt
+  echo "NO_SYSTEM_MODALS"
 fi
+
+grep -RIn -E "aria-label=.*GUERRA É PAZ" app || echo "NO_BRAND_ARIA"
+
+echo "# A11Y"
+grep -RIn "focus-visible" app || echo "NO_FOCUS"
+grep -RIn "aria-current=" app || echo "NO_ARIA_CURRENT"

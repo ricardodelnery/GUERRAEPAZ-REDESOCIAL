@@ -1,6 +1,6 @@
 export default function BottomTabBar() {
   const Item = ({ id, label, icon, active }: { id: string; label: string; icon: string; active?: boolean }) => (
-    <button
+    <button data-id={id}
       className={`flex flex-col items-center justify-center flex-1 py-2 ${active ? 'text-red-600' : 'text-gray-500'}`}
       aria-current={active ? 'page' : undefined}
       aria-label={label}
