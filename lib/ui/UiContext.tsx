@@ -4,9 +4,9 @@ import React, { createContext, useCallback, useContext, useRef, useState } from 
 type UiState = {
   searchOpen: boolean;
   notifOpen: boolean;
-  openSearch: (from?: HTMLElement | null) => void;
+  openSearch: (from?: HTMLElement |( _from?: HTMLElement | null) => void;
   closeSearch: () => void;
-  openNotif: (from?: HTMLElement | null) => void;
+  openNotif: (from?: HTMLElement |( _from?: HTMLElement | null) => void;
   closeNotif: () => void;
   lastTriggerRef: React.MutableRefObject<HTMLElement | null>;
 };
@@ -18,8 +18,8 @@ export function UiProvider({ children }: { children: React.ReactNode }) {
   const [notifOpen, setNotifOpen] = useState(false);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
 
-  const openSearch = useCallback((from?: HTMLElement | null) => {
-    lastTriggerRef.current = (from ?? null);
+  const openSearch = useCallback((from?: HTMLElement |( _from?: HTMLElement | null) => {
+    lastTriggerRef.current = (from ??( _from?: HTMLElement | null);
     setSearchOpen(true);
     document.documentElement.classList.add('overflow-hidden');
   }, []);
@@ -29,8 +29,8 @@ export function UiProvider({ children }: { children: React.ReactNode }) {
     lastTriggerRef.current?.focus?.();
   }, []);
 
-  const openNotif = useCallback((from?: HTMLElement | null) => {
-    lastTriggerRef.current = (from ?? null);
+  const openNotif = useCallback((from?: HTMLElement |( _from?: HTMLElement | null) => {
+    lastTriggerRef.current = (from ??( _from?: HTMLElement | null);
     setNotifOpen(true);
   }, []);
   const closeNotif = useCallback(() => {

@@ -1,8 +1,8 @@
 'use client';
 import { useEffect } from 'react';
 import { UiProvider, useUi } from '../../lib/ui/UiContext';
-import SearchSheet from '../../app/components/SearchSheet';
-import NotifDrawer from '../../app/components/NotifDrawer';
+import SearchSheet from '../shell/SearchSheetClient';
+import NotifDrawer from '../shell/NotifDrawerClient';
 
 function HostInner({ children }: { children: React.ReactNode }) {
   const { searchOpen, notifOpen, openSearch, closeSearch, openNotif, closeNotif } = useUi();
