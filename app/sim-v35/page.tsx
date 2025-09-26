@@ -1,4 +1,8 @@
 'use client';
+import PostCard from './PostCard';
+import Composer from './Composer';
+import StoriesRow from './StoriesRow';
+import BottomTabBar from './BottomTabBar';
 import BrandMarkOfficial from './BrandMarkOfficial';
 /** Esqueleto mínimo só p/ validar a rota sem travar o terminal.
  *  Depois vou acrescentando os blocos (BrandMark, Header, etc.) em partes pequenas. */
@@ -11,8 +15,15 @@ export default function MobileFirstHomeSimV35() {  return (
         </div>
       </header>
       <main className="max-w-7xl mx-auto px-4 py-6">
-        <p className="text-sm text-gray-600">Rota /sim-v35 ativa. Pronta para receber os blocos completos.</p>
+        <div className="bg-white p-3 rounded-lg shadow-sm"><StoriesRow /></div>
+<Composer />
+<div className="space-y-4">
+  <PostCard area="Cinemateca" time="2d" author="Especialista em Desinformação" avatar="https://placehold.co/40x40/A5B4FC/3730A3?text=ED" title="A narrativa em 'The Social Dilemma' e a Doutrina da Punição" excerpt="Como enquadramentos emocionais moldam percepções públicas..." />
+  <PostCard area="Arsenal" time="1d" author="Agente Analítico" avatar="https://placehold.co/40x40/C4B5FD/4338CA?text=AA" title="Expandindo o Capítulo 6: a 'Guerra de Asfixia'" excerpt="Políticas de tarifas com impacto na soberania industrial..." />
+</div>
+<p className="text-sm text-gray-600">Rota /sim-v35 ativa. Pronta para receber os blocos completos.</p>
       </main>
-    </div>
+      <BottomTabBar />
+</div>
   );
 }
