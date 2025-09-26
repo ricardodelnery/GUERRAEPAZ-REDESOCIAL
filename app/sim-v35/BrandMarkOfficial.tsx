@@ -1,4 +1,5 @@
 'use client';
+
 export default function BrandMarkOfficial() {
   return (
     <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-baseline select-none">
