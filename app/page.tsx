@@ -1,6 +1,6 @@
-export default function Home() {
 import Composer from "./components/Composer";
 import Highlights from "./components/Highlights";
+export default function Home() {
   return (
     <div className="grid grid-cols-12 gap-6" data-testid="home-grid">
       {/* LEFT (lg+) */}
