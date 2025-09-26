@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 pt-4 pb-24 md:pb-6">{children}</main>
+        <main className="max-w-7xl mx-auto px-4 pt-6 pb-24 md:pb-8">{children}</main>
 
         <footer className="bg-gray-800 text-gray-300 py-10 mt-8">
           <div className="max-w-7xl mx-auto px-4 text-sm">© 2025 Guerra & Paz. Todos os direitos reservados.</div>
