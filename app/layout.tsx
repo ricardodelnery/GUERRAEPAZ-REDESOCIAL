@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BrandMarkOfficial />
             <div className="flex items-center gap-1">
               <button aria-label="Buscar" className="p-2 rounded hover:bg-gray-100">🔎</button>
-              <span className="relative inline-block"><span className="relative inline-block"><button aria-label="Notificações" className="relative p-2 rounded hover:bg-gray-100">🔔<span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></button><span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></span><span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 text-[10px] leading-4 rounded-full bg-brand-red text-white text-center">3</span></span>
+              <HeaderActionsClient />
               <button className="bg-brand-red text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
             </div>
           </div>

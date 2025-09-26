@@ -1,0 +1,44 @@
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/10) ...
+[ADMIN] log-test ok 2025-09-26T23:39:03.478Z
+   Generating static pages (2/10) 
+   Generating static pages (4/10) 
+   Generating static pages (7/10) 
+ ✓ Generating static pages (10/10)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    155 B          87.4 kB
+├ ○ /_not-found                          873 B          88.1 kB
+├ ○ /api/admin/log-test                  0 B                0 B
+├ ƒ /api/dossie                          0 B                0 B
+├ ƒ /api/health                          0 B                0 B
+├ ƒ /api/health/deep                     0 B                0 B
+├ ○ /dashboard                           155 B          87.4 kB
+├ ○ /entrar                              514 B          87.8 kB
+├ ○ /home-v2                             155 B          87.4 kB
+├ ƒ /perfil/[username]                   155 B          87.4 kB
+├ ƒ /post/[id]                           154 B          87.4 kB
+└ ○ /sim-v35                             621 B          87.9 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/117-74c822e5f033d84d.js       31.7 kB
+  ├ chunks/fd9d1056-f8a2d551cbb94c85.js  53.6 kB
+  └ other shared chunks (total)          1.89 kB
+
+
+ƒ Middleware                             26.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
