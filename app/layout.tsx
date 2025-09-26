@@ -24,12 +24,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Explorar</a>
               <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Mapa</a>
               <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Cinemateca</a>
-              <a className="text-gray-600 hover:text-brand-red ml-auto" href="#">Loja</a>
+              <a className="text-gray-600 hover:text-brand-red pb-2" href="#">Loja</a>
             </div>
           </nav>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 pt-6 pb-24 md:pb-8">{children}</main>
+        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
 
         <footer className="bg-gray-800 text-gray-300 py-10 mt-8">
           <div className="max-w-7xl mx-auto px-4 text-sm">© 2025 Guerra & Paz. Todos os direitos reservados.</div>
