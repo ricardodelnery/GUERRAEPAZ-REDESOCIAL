@@ -223,3 +223,10 @@ GIT_STATUS_CLEAN_NOW: NO
  M .logs/sv_tag.txt
  M app/page.tsx
 ?? app/components/FeedPostCard.tsx
+[main 9c5d13a] feat(feed): render estático no feed da home (STATIC_POSTS.map) + limpeza
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 5 files changed, 94 insertions(+), 10 deletions(-)
+ create mode 100644 app/components/FeedPostCard.tsx
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.clean-final
