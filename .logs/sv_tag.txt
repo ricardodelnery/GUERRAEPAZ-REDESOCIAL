@@ -243,3 +243,15 @@ GIT_STATUS_CLEAN_NOW: NO
 ?? .logs/p5_social_profile.txt
 ?? app/components/UserProfileHeader.tsx
 ?? app/loading.tsx
+[main 94bd619] feat(perfil,nav): header básico (Recruta) + loading e smokes (Fase 1)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 7 files changed, 86 insertions(+)
+ create mode 100644 .logs/p5_social_profile.txt
+ create mode 100644 app/components/UserProfileHeader.tsx
+ create mode 100644 app/loading.tsx
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+1) O que faz · Commita correções e cria tag de savepoint
+2) Resultado esperado · Working tree clean ou só logs pendentes
+3) O que confirmar · tag criada 'sv-YYYYMMDD-HHMM_<HEAD>'
+4) Log/artefatos gerados · .logs/sv_tag.txt

@@ -64,3 +64,17 @@ NO_ADMIN_LOGGING_HOOKS
 ## ADMIN LOG scan (route usage)
 2:import { adminLog } from '../../../../utils/logger';
 4:  adminLog('log-test ok', new Date().toISOString());
+1) O que faz · Revalida detecção de rate-limit e admin logs
+2) Resultado esperado · Greps positivos no middleware e logger/route
+3) O que confirmar · .logs/sv_rate.txt com hits e sem 'NO_*'
+4) Log/artefatos gerados · .logs/sv_rate.txt
+# RATE/ADMIN DIAG
+## RATE
+16:    console.log('[RATE-LIMIT]', k, entry.count);
+17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
+## ADMIN LOG (logger file)
+1:export const adminLog = (...args: any[]) => {
+2:  try { console.log('[ADMIN]', ...args); } catch {}
+## ADMIN LOG (route usage)
+2:import { adminLog } from '../../../../utils/logger';
+4:  adminLog('log-test ok', new Date().toISOString());

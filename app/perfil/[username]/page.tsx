@@ -1,5 +1,6 @@
-export default function PerfilPage({ params }: { params: { username: string } }) {
 import UserProfileHeader from '../../components/UserProfileHeader';
+
+export default function PerfilPage({ params }: { params: { username: string } }) {
   return (
     <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
       <UserProfileHeader username={params.username} level="Recruta" />

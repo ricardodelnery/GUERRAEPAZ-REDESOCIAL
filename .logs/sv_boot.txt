@@ -119,3 +119,15 @@ Date:   Fri Sep 26 12:28:12 2025 +0000
 
  .github/workflows/ci.yml | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
+1) O que faz · Garante engines no package.json e CI em Node 18.20.8
+2) Resultado esperado · engines pinadas; workflow com node-version 18.20.8
+3) O que confirmar · grep em package.json e .github/workflows/ci.yml
+4) Log/artefatos gerados · .logs/sv_boot.txt
+# ENGINES & CI CHECK
+13:    "ci": "npm run build && npx playwright install --with-deps && PLAYWRIGHT_BASE_URL=http://127.0.0.1:3000 npx playwright test --reporter=line"
+23:    "@types/node": "^24.5.2",
+33:  "engines": {
+34:    "node": "18.20.8",
+35:    "npm": "10.8.2"
+20:      - uses: actions/setup-node@v4
+22:          node-version:  18.20.8

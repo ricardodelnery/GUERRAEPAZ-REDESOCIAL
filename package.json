@@ -4,7 +4,8 @@
   "private": "true",
   "scripts": {
     "dev": "next dev",
-    "build":"next build","smoke":".scripts\/ui_smoke.sh",
+    "build": "next build",
+    "smoke": ".scripts/ui_smoke.sh",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -28,5 +29,9 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": "18.20.8",
+    "npm": "10.8.2"
   }
 }
