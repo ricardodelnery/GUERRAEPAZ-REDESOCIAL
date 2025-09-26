@@ -9,3 +9,8 @@ coverage/
 test-results/
 .vercel
 *.bak
+.next/
+node_modules/
+.vercel/cache/
+*.log
+tsconfig.tsbuildinfo
