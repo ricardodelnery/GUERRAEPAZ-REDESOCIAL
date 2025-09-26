@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 function ProfileCompact() {
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -32,7 +33,7 @@ function Shortcuts() {
   );
 }
 function GroupsAccordion() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
       <button className="w-full flex items-center justify-between" aria-expanded={open} onClick={() => setOpen(v=>!v)}>
