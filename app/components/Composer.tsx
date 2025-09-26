@@ -4,7 +4,7 @@ export default function Composer() {
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 rounded-full bg-gray-100 grid place-items-center font-semibold text-gray-600">VS</div>
         <input
-          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/40"
+          className="flex-1 border-0 bg-gray-100 rounded-xl px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/40"
           type="text"
           placeholder="O que estás a pensar?"
           aria-label="O que estás a pensar?"
