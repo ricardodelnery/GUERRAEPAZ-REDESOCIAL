@@ -1,3 +1,5 @@
+import CardActions from '../common/CardActions';
+
 type Props = {
   area: string;
   author: string;
@@ -21,6 +23,7 @@ export default function PostCard({ area, author, avatar, title, excerpt, time }:
       </div>
       <h3 className="mt-3 font-semibold text-gray-800">{title}</h3>
       <p className="text-sm text-gray-700 mt-2">{excerpt}</p>
+      <CardActions />
     </article>
   );
 }
