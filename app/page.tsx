@@ -1,4 +1,6 @@
 export default function Home() {
+import Composer from "./components/Composer";
+import Highlights from "./components/Highlights";
   return (
     <div className="grid grid-cols-12 gap-6" data-testid="home-grid">
       {/* LEFT (lg+) */}
@@ -14,6 +16,8 @@ export default function Home() {
 
       {/* FEED (centro) */}
       <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-4" data-testid="feed">
+        <Highlights />
+        <Composer />
         <article className="bg-white p-4 rounded-xl shadow-sm" data-testid="post-card">
           <header className="flex items-center justify-between">
             <div className="font-semibold text-sm">Autor Exemplo</div>
