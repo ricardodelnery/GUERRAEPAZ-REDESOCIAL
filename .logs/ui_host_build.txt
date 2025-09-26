@@ -1,0 +1,62 @@
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/sim-v35/Composer.tsx
+6:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/sim-v35/LeftRail.tsx
+8:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/sim-v35/PostCard.tsx
+9:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/sim-v35/RightRail.tsx
+8:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+34:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+41:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/sim-v35/page.tsx
+3:10  Warning: 'useEffect' is defined but never used.  no-unused-vars
+3:21  Warning: 'useState' is defined but never used.  no-unused-vars
+
+./components/home/Composer.tsx
+5:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/home/LeftRailStatic.tsx
+9:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/home/PostCard.tsx
+16:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/home/RightRailStatic.tsx
+10:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+17:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+29:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./lib/ui/UiContext.tsx
+7:16  Warning: 'from' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+9:15  Warning: 'from' is defined but never used. Allowed unused args must match /^_/u.  no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+Failed to compile.
+
+./components/shell/ClientUiHost.tsx:33:20
+Type error: Type '{ open: boolean; onClose: () => void; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'open' does not exist on type 'IntrinsicAttributes'.
+
+[0m [90m 31 |[39m       {children}[0m
+[0m [90m 32 |[39m       {[90m/* Modais globais controlados por contexto */[39m}[0m
+[0m[31m[1m>[22m[39m[90m 33 |[39m       [33m<[39m[33mSearchSheet[39m open[33m=[39m{searchOpen} onClose[33m=[39m{closeSearch} [33m/[39m[33m>[39m[0m
+[0m [90m    |[39m                    [31m[1m^[22m[39m[0m
+[0m [90m 34 |[39m       [33m<[39m[33mNotifDrawer[39m open[33m=[39m{notifOpen} onClose[33m=[39m{closeNotif} [33m/[39m[33m>[39m[0m
+[0m [90m 35 |[39m     [33m<[39m[33m/[39m[33m>[39m[0m
+[0m [90m 36 |[39m   )[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null
