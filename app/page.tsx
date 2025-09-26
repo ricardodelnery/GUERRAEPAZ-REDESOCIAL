@@ -1,5 +1,10 @@
 import Composer from "./components/Composer";
+import FeedPostCard from './components/FeedPostCard';
 import Highlights from "./components/Highlights";
+const STATIC_POSTS = [
+  { author: 'Operador Zero', handle: 'operador0', dateISO: '2025-09-26T12:00:00Z', content: 'Bem-vindo ao GUERRA export default function Home() { PAZ. Este é um post estático para o MVP Social.' }
+];
+
 export default function Home() {
   return (
     <div className="grid grid-cols-12 gap-6" data-testid="home-grid">

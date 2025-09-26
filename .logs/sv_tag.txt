@@ -187,3 +187,16 @@ PENDING_COUNT_AFTER: 1
 GIT_STATUS_CLEAN_NOW: NO
 # MP-A.8 CLEAN LOGS FINAL
  M .logs/sv_tag.txt
+[main 66e747c] chore(logs): sync final (MP-A→D verdes)
+ Author: ricardodelnery <ricardodelnery@gmail.com>
+ 1 file changed, 7 insertions(+)
+PENDING_COUNT_AFTER: 1
+GIT_STATUS_CLEAN_NOW: NO
+# MP-A.9 CLEAN ALL (feed)
+ M .logs/build_dry.txt
+ M .logs/sv_rate.txt
+ M .logs/sv_tag.txt
+ M app/page.tsx
+?? .logs/p5_social_feed.txt
+?? .logs/p5_social_nav.txt
+?? app/components/FeedPostCard.tsx

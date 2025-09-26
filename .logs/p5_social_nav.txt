@@ -1,0 +1,5 @@
+# P5.FEED.3 NAV CHECKS
+5:      aria-current={active ? 'page' : undefined}
+ROUTE: app/page.tsx
+ROUTE: app/perfil/[username]/page.tsx
+ROUTE: app/post/[id]/page.tsx

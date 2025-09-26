@@ -54,3 +54,13 @@ app/api/admin/log-test/route.ts:4:  adminLog('log-test ok', new Date().toISOStri
 utils/logger.ts:1:export const adminLog = (...args: any[]) => {
 utils/logger.ts:2:  try { console.log('[ADMIN]', ...args); } catch {}
 NO_ADMIN_LOGGING_HOOKS
+# MP-D.relint (robust)
+## RATE-LIMIT scan
+16:    console.log('[RATE-LIMIT]', k, entry.count);
+17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
+## ADMIN LOG scan (logger file)
+1:export const adminLog = (...args: any[]) => {
+2:  try { console.log('[ADMIN]', ...args); } catch {}
+## ADMIN LOG scan (route usage)
+2:import { adminLog } from '../../../../utils/logger';
+4:  adminLog('log-test ok', new Date().toISOString());

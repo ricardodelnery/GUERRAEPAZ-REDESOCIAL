@@ -1,0 +1,11 @@
+# P5.FEED.1 CREATED
+7:export default function FeedPostCard({ author, handle, dateISO, content }: Props) {
+# P5.FEED.2 VERIFY
+2:import FeedPostCard from './components/FeedPostCard';
+4:const STATIC_POSTS = [
+# P5.FEED.2.fix VERIFY
+NO_MAP_RENDER_IN_HOME
+# P5.FEED.4 SMOKE
+2:import FeedPostCard from './components/FeedPostCard';
+11:    <article role="article" aria-label={`Post de ${author}`} className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
+17:        <time className="text-xs text-gray-500" dateTime={dateISO} aria-label={`Publicado em ${human}`}>{human}</time>
