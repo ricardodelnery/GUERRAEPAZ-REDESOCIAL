@@ -1,5 +1,5 @@
-import Story from "@/components/common/Story";
-import Composer from "@/components/home/Composer";
+import Story from "../../components/common/Story";
+import Composer from "../../components/home/Composer";
 
 export default function HomeV2() {
   return (
