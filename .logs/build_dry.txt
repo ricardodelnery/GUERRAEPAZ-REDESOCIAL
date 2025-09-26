@@ -147,3 +147,12 @@ Route (app)                              Size     First Load JS
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
+# MP-D.fix DRY BUILD
+
+> guerrapaz-redesocial@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...

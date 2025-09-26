@@ -1,4 +1,6 @@
 import BrandMarkOfficial from "./components/BrandMarkOfficial";
+import SearchSheet from './components/SearchSheet';
+import NotifDrawer from './components/NotifDrawer';
 import { inter } from "./fonts";
 import './globals.css';
 import BottomTabBar from "./components/BottomTabBar";
@@ -29,6 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
           </nav>
         </header>
+          <SearchSheet />
+          <NotifDrawer />
 
         <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
 

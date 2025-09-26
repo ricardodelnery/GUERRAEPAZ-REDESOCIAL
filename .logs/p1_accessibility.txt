@@ -46,3 +46,7 @@ export const metadata = { title: "Guerra & Paz" };
 app/globals.css:2::focus-visible { outline: 2px solid #111; outline-offset: 2px; }
 app/globals.css:3:a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
 app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}
+# MP-SMOKES.FINAL A11Y
+app/globals.css:2::focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+app/globals.css:3:a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+app/components/BottomTabBar.tsx:5:      aria-current={active ? 'page' : undefined}
