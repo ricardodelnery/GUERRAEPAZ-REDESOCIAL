@@ -1,4 +1,5 @@
 'use client';
+import BrandMarkOfficial from './BrandMarkOfficial';
 import { useEffect, useState } from 'react';
 
 /** SIM-V35 — esqueleto mínimo
@@ -10,7 +11,7 @@ export default function MobileFirstHomeSimV35() {
     <div className="min-h-svh bg-gray-100 text-gray-900">
       <header className="bg-white sticky top-0 z-50 border-b">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <span className="font-extrabold tracking-tight text-red-600">GUERRA & PAZ</span>
+          <BrandMarkOfficial />
           <span className="text-sm text-gray-600">SIM-V35 • base</span>
         </div>
       </header>
