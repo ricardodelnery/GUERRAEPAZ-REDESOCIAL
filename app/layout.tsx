@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-1">
               <button aria-label="Buscar" className="p-2 rounded hover:bg-gray-100">🔎</button>
               <button aria-label="Notificações" className="p-2 rounded hover:bg-gray-100">🔔</button>
-              <button className="bg-red-600 text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
+              <button className="bg-brand-red text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
             </div>
           </div>
           <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
