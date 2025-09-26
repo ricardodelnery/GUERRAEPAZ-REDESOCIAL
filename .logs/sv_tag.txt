@@ -255,3 +255,49 @@ GIT_STATUS_CLEAN_NOW: NO
 2) Resultado esperado · Working tree clean ou só logs pendentes
 3) O que confirmar · tag criada 'sv-YYYYMMDD-HHMM_<HEAD>'
 4) Log/artefatos gerados · .logs/sv_tag.txt
+TAG_CREATED: sv-20250926-1509_39f8701
+# GO/NO-GO SNAPSHOT
+DATE: 2025-09-26T15:09:28+00:00
+BUILD_STATUS: EXPECT_NEXT
+SMOKES_STATUS:
+app/layout.tsx:3:import NotifDrawer from './components/NotifDrawer';
+app/layout.tsx:34:          <SearchSheet />
+app/layout.tsx:35:          <NotifDrawer />
+1) O que faz · Verifica presença de SearchSheet/NotifDrawer, header, main, navs, brand
+2) Resultado esperado · Smokes sem 'NO_SYSTEM_MODALS'; landmarks detectados
+3) O que confirmar · .logs/sv_smoke.txt tem todas as entradas presentes
+4) Log/artefatos gerados · .logs/sv_smoke.txt
+# SMOKE STRUCTURE (re-run)
+app/components/FeedPostCard.tsx:12:      <header className="flex items-center justify-between mb-2">
+app/layout.tsx:14:        <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
+app/layout.tsx:37:        <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
+app/perfil/[username]/page.tsx:5:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/entrar/page.tsx:10:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/dashboard/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/post/[id]/page.tsx:3:    <main style={{padding:20,fontFamily:'ui-sans-serif,system-ui'}}>
+app/components/BottomTabBar.tsx:13:    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+app/layout.tsx:23:          <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
+NO_SYSTEM_MODALS
+app/components/BrandMarkOfficial.tsx:3:    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
+app/components/BrandMarkOfficial.tsx:4:      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
+RATE_STATUS:
+## ADMIN LOG scan (logger file)
+1:export const adminLog = (...args: any[]) => {
+2:  try { console.log('[ADMIN]', ...args); } catch {}
+## ADMIN LOG scan (route usage)
+2:import { adminLog } from '../../../../utils/logger';
+4:  adminLog('log-test ok', new Date().toISOString());
+1) O que faz · Revalida detecção de rate-limit e admin logs
+2) Resultado esperado · Greps positivos no middleware e logger/route
+3) O que confirmar · .logs/sv_rate.txt com hits e sem 'NO_*'
+4) Log/artefatos gerados · .logs/sv_rate.txt
+# RATE/ADMIN DIAG
+## RATE
+16:    console.log('[RATE-LIMIT]', k, entry.count);
+17:    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
+## ADMIN LOG (logger file)
+1:export const adminLog = (...args: any[]) => {
+2:  try { console.log('[ADMIN]', ...args); } catch {}
+## ADMIN LOG (route usage)
+2:import { adminLog } from '../../../../utils/logger';
+4:  adminLog('log-test ok', new Date().toISOString());

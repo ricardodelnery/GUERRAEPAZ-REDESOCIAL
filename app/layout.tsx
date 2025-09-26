@@ -10,7 +10,7 @@ export const metadata = { title: "Guerra & Paz" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="{` min-h-svh font-sans bg-gray-100 text-gray-900`}">
+      <body  className={` {` min-h-svh font-sans bg-gray-100 text-gray-900`}`}>
         <header className="bg-white sticky top-0 z-50 border-b border-brand-red/40">
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
             <BrandMarkOfficial />
