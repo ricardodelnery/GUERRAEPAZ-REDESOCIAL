@@ -1,9 +1,10 @@
-import Story from "../../components/common/Story";
-import Composer from "../../components/home/Composer";
+// server component por padrão (sem "use client")
+import Story from '../../components/common/Story';
+import Composer from '../../components/home/Composer';
 
 export default function HomeV2() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    <div className="max-w-7xl mx-auto px-4 py-6">
       {/* Stories row */}
       <div className="bg-white p-3 rounded-lg shadow-sm flex gap-3 overflow-x-auto no-scrollbar">
         <Story title="Análise: Ucrânia" bg="https://placehold.co/120x112/334155/ffffff?text=Ucr%C3%A2nia" />
@@ -14,7 +15,9 @@ export default function HomeV2() {
       </div>
 
       {/* Composer */}
-      <Composer />
+      <div className="mt-6">
+        <Composer />
+      </div>
     </div>
   );
 }
