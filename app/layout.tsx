@@ -2,8 +2,8 @@ import { ReactNode } from "react"
 import "./globals.css"
 
 export const metadata = {
-  title: "Guerra & Paz",
-  description: "Plataforma de soberania intelectual",
+  title: "Guerra & Paz - Soberania Intelectual",
+  description: "Plataforma de análise crítica e defesa mental",
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

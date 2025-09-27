@@ -1,14 +1,27 @@
+'use client';
+import { useEffect, useState } from "react";
+
+// Versão CSS da logo como fallback
+function CssBrandLogo({ height = 36 }: { height?: number }) {
+  const scale = height / 70;
+  return (
+    <div className="gp-css-logo" style={{ display: 'inline-flex', alignItems: 'center', transform: `scale(${scale})`, transformOrigin: 'left center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 900 }}>
+        <span style={{ fontSize: 70, color: '#000', fontWeight: 900, letterSpacing: '-2px' }}>GUERRA</span>
+        <div style={{ width: 15 }} />
+        <span style={{ fontSize: 70, color: '#000', fontWeight: 900, letterSpacing: '-2px' }}>É</span>
+        <div style={{ width: 15 }} />
+        <span style={{ fontSize: 70, color: '#DC143C', fontWeight: 900, letterSpacing: '-2px' }}>PAZ</span>
+      </div>
+    </div>
+  );
+}
+
 export default function BrandMarkOfficial() {
   return (
-    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="GUERRA É PAZ — logomarca oficial" className="h-full">
-        <style>
-          {`.a{font:900 52px system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}.r{fill:#dc2626}`}
-        </style>
-        <text x="0" y="56" className="a">GUERRA</text>
-        <text x="240" y="56" className="a">É</text>
-        <text x="300" y="56" className="a r">PAZ</text>
-      </svg>
+    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none">
+      <span className="sm:hidden"><CssBrandLogo height={32} /></span>
+      <span className="hidden sm:inline-flex"><CssBrandLogo height={36} /></span>
     </span>
   );
 }
