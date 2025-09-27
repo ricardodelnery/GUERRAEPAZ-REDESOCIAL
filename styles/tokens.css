@@ -1,82 +1,11 @@
-:root {
-  /* Cores de marca */
-  --brand-red: #dc2626;        /* mesma família do text-red-600 */
-  --brand-ink: #111827;        /* slate/gray-900 */
-  --brand-ink-2: #334155;      /* slate-700 */
-  --surface: #ffffff;
-  --surface-2: #f8fafc;        /* slate-50 */
-  --line: #e5e7eb;             /* gray-200 */
-
-  /* Tipografia */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-
-  /* Raio e sombra */
-  --radius-sm: .5rem;          /* 8px */
-  --radius-md: .75rem;         /* 12px */
-  --radius-lg: 1rem;           /* 16px */
-  --elev-1: 0 1px 2px rgba(0,0,0,.06);
-  --elev-2: 0 8px 24px rgba(0,0,0,.12);
-
-  /* Espaçamentos de layout */
-  --container-px: 1rem;        /* px-4 */
-  --header-y: .5rem;           /* py-2 */
-  --section-gap: 1.5rem;       /* 24px */
-}
-
-/* Helpers finos que a Diretiva usa bastante */
-.no-scrollbar { scrollbar-width: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
-
-/* Slots visuais (podem ser aplicados com class extras) */
-.brand-ring:focus-visible {
-  outline: 2px solid var(--brand-red);
-  outline-offset: 2px;
-}
-.card {
-  background: var(--surface);
-  border-radius: var(--radius-md);
-  box-shadow: var(--elev-1);
-}
-.card-strong {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--elev-2);
-}
-
-/* Gradiente de marca (opcional para barras/highlights) */
-.brand-gradient {
-  background: linear-gradient(90deg, var(--brand-red) 0%, #ef4444 100%);
-}
-
-/* === Helpers utilitários (Diretiva Principal) === */
-.text-brand-red{color:var(--brand-red);}
-.hover\:text-brand-red:hover{color:var(--brand-red);}
-.bg-brand-red{background-color:var(--brand-red);}
-.hover\:bg-brand-red:hover{background-color:var(--brand-red);}
-.border-brand-red{border-color:var(--brand-red);}
-.focus\:brand-ring:focus-visible,
-.brand-ring:focus-visible{
-  outline:2px solid transparent;
-  box-shadow:0 0 0 3px color-mix(in oklab, var(--brand-red) 35%, white);
-}
-
-/* tokens de spacing usados no header/nav (fallbacks defensivos) */
 :root{
-  --container-px: var(--container-px, 1rem);
-  --header-y: var(--header-y, .5rem);
+  --brand-red:#dc2626;
+  --brand-ink:#111827;
+  --line:#e5e7eb;
+  --container-px:1rem;
+  --header-y:.5rem;
 }
-.border-brand-red-40{
-  /* aproximação visual de 40% usando color-mix */
-  border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
-}
-.border-brand-red-40{
-  /* aproximação visual de 40% usando color-mix */
-  border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
-}
-.border-brand-red-40{
-  border-color: color-mix(in oklab, var(--brand-red) 40%, transparent);
-}
+/* Helpers utilitários */
+.text-brand-red{color:var(--brand-red);}
+.border-brand-red{border-color:var(--brand-red);}
+.bg-brand-red{background-color:var(--brand-red);}

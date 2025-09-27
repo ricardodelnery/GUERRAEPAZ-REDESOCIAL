@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={` font-sans min-h-svh bg-gray-100 text-gray-900`}><UiProvider><ClientUiHost>
-        <header className="bg-white sticky top-0 z-50  border-b-2 border-brand-red">
+        <header className="bg-white sticky top-0 z-50   border-b-4 border-brand-red">
           <div className="max-w-7xl mx-auto px-[var(--container-px)] py-[var(--header-y)] flex items-center justify-between">
             <BrandMarkOfficial />
             <div className="flex items-center gap-1">

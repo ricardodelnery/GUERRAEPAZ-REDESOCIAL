@@ -1,4 +1,8 @@
-@import "../styles/tokens.css";
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+
 /* A11y: foco visível mínimo (AA) */
 :focus-visible { outline: 2px solid #111; outline-offset: 2px; }
 a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
@@ -7,3 +11,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset:
 .simv35-isolated header.sticky { display: none !important; }
 .simv35-isolated nav[aria-label="Navegação secundária"] { display: none !important; }
 .simv35-isolated main.max-w-7xl { padding: 0 !important; }
+
+
+/* === INLINED TOKENS (no import) === */
+
+:root{
+  --brand-red:#dc2626;
+  --brand-ink:#111827;
+  --line:#e5e7eb;
+  --container-px:1rem;
+  --header-y:.5rem;
+}
+/* Helpers utilitários */
+.text-brand-red{color:var(--brand-red);}
+.border-brand-red{border-color:var(--brand-red);}
+.bg-brand-red{background-color:var(--brand-red);}
+
