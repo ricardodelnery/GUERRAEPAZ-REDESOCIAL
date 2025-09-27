@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /************************************
  * LOGOMARCA — ordem de fontes (sem PNG)
@@ -44,10 +44,38 @@ function BrandMarkOfficial() {
   );
 }
 
+/**********************
+ * Navegação inferior
+ **********************/
+function BottomTabBar({ active, setActive }: { active: string; setActive: (k: "feed" | "explorar" | "mapa" | "cine" | "perfil") => void }) {
+  const Item = ({ id, label, icon }: { id: "feed" | "explorar" | "mapa" | "cine" | "perfil"; label: string; icon: string }) => (
+    <button
+      className={`flex flex-col items-center justify-center flex-1 py-2 ${active === id ? 'text-red-600' : 'text-gray-500'}`}
+      onClick={() => setActive(id)}
+      aria-current={active === id ? 'page' : undefined}
+    >
+      <span className="text-lg" aria-hidden>{icon}</span>
+      <span className="text-[11px] leading-none">{label}</span>
+    </button>
+  );
+  
+  return (
+    <nav aria-label="Navegação principal" className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden">
+      <div className="max-w-7xl mx-auto px-2 grid grid-cols-5">
+        <Item id="feed" label="Feed" icon="🏠" />
+        <Item id="explorar" label="Explorar" icon="🔎" />
+        <Item id="mapa" label="Mapa" icon="🗺️" />
+        <Item id="cine" label="Cine" icon="🎬" />
+        <Item id="perfil" label="Perfil" icon="👤" />
+      </div>
+    </nav>
+  );
+}
+
 // Estrutura principal da página
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'feed'>("feed");
-  
+  const [activeTab, setActiveTab] = useState<'feed' | 'explorar' | 'mapa' | 'cine' | 'perfil'>("feed");
+
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white sticky top-0 z-50 border-b p-4">
@@ -59,10 +87,12 @@ export default function Home() {
           </div>
         </div>
       </header>
-      
-      <main className="max-w-7xl mx-auto p-4">
-        <p>Layout em construção - Passo 2 (Logomarca adicionada)</p>
+
+      <main className="max-w-7xl mx-auto p-4 pb-24 md:pb-6">
+        <p>Layout em construção - Passo 3 (BottomTabBar adicionado)</p>
       </main>
+
+      <BottomTabBar active={activeTab} setActive={setActiveTab} />
     </div>
   );
 }
