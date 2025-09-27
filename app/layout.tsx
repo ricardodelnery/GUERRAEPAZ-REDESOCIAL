@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-7xl mx-auto px-4 pt-8 pb-24 md:pb-10">{children}</main>
 
         <footer className="bg-gray-800 text-gray-300 py-10 mt-8">
-          <div className="max-w-7xl mx-auto px-4 text-sm">© 2025 Guerra & Paz. Todos os direitos reservados.</div>
+          <div className="max-w-7xl mx-auto px-[var(--container-px)] text-sm">© 2025 Guerra & Paz. Todos os direitos reservados.</div>
         </footer>
 
         <BottomTabBar />
