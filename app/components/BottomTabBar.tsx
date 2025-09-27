@@ -1,40 +1,38 @@
 'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-export default function BottomTabBar() {
-  const pathname = usePathname();
+interface BottomTabBarProps {
+  active: string;
+  setActive: (tab: string) => void;
+}
 
+export default function BottomTabBar({ active, setActive }: BottomTabBarProps) {
   const tabs = [
-    { href: '/',           label: 'Feed',   icon: '🏠', isActive: () => pathname === '/' || pathname === '/home-v2' },
-    { href: '/perfil/demo', label: 'Perfil', icon: '👤', isActive: () => pathname.startsWith('/perfil') },
+    { id: 'feed', label: 'Feed', icon: '🏠' },
+    { id: 'explorar', label: 'Explorar', icon: '🔎' },
+    { id: 'mapa', label: 'Mapa', icon: '🗺️' },
+    { id: 'cine', label: 'Cine', icon: '🎬' },
+    { id: 'perfil', label: 'Perfil', icon: '👤' }
   ];
 
   return (
-    <nav
-      aria-label="Navegação principal"
-      className="fixed bottom-0 inset-x-0 z-40 border-t bg-white md:hidden"
-    >
-      <ul className="grid grid-cols-2">
-        {tabs.map(tab => {
-          const active = tab.isActive();
-          return (
-            <li key={tab.href}>
-              <Link
-                href={tab.href}
-                aria-current={active ? 'page' : undefined}
-                className={[
-                  'flex flex-col items-center justify-center py-2 text-sm',
-                  active ? 'text-red-600 font-semibold' : 'text-gray-700'
-                ].join(' ')}
-              >
-                <span aria-hidden="true" className="text-base leading-none">{tab.icon}</span>
-                <span className="mt-0.5">{tab.label}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden" 
+         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+         aria-label="Navegação principal">
+      <div className="max-w-7xl mx-auto px-2 grid grid-cols-5">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`flex flex-col items-center justify-center flex-1 py-2 ${
+              active === tab.id ? 'text-red-600' : 'text-gray-500'
+            }`}
+            onClick={() => setActive(tab.id)}
+            aria-current={active === tab.id ? 'page' : undefined}
+          >
+            <span className="text-lg" aria-hidden>{tab.icon}</span>
+            <span className="text-[11px] leading-none">{tab.label}</span>
+          </button>
+        ))}
+      </div>
     </nav>
   );
 }
