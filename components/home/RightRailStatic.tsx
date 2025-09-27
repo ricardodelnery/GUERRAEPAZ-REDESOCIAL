@@ -9,14 +9,14 @@ export default function RightRailStatic() {
         <div className="mt-3 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Image src="https://placehold.co/32x32/FDBA74/C2410C?text=OP" alt="Avatar de Operador Perspicaz" width="{32}" height="{32}" className="w-8 h-8 rounded" />
+              <Image src="https://placehold.co/32x32/FDBA74/C2410C?text=OP" alt="Avatar de Operador Perspicaz" width={32} height={32} className="w-8 h-8 rounded" />
               <div className="text-sm font-medium">Operador Perspicaz</div>
             </div>
             <button className="text-xs px-3 py-1 bg-gray-100 rounded-lg hover:bg-gray-200">Seguir</button>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Image src="https://placehold.co/32x32/C4B5FD/4338CA?text=AA" alt="Avatar de Agente Analítico" width="{32}" height="{32}" className="w-8 h-8 rounded" />
+              <Image src="https://placehold.co/32x32/C4B5FD/4338CA?text=AA" alt="Avatar de Agente Analítico" width={32} height={32} className="w-8 h-8 rounded" />
               <div className="text-sm font-medium">Agente Analítico</div>
             </div>
             <button className="text-xs px-3 py-1 bg-gray-100 rounded-lg hover:bg-gray-200">Seguir</button>
