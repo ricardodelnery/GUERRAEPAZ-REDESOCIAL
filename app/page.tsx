@@ -1,70 +1,68 @@
-'use client';
-import { useState } from "react";
-import BrandMarkOfficial from './components/BrandMarkOfficial';
-import BottomTabBar from './components/BottomTabBar';
+'use client'
+import { useEffect, useState } from "react";
 
-export default function HomePage() {
-  const [activeTab, setActiveTab] = useState('feed');
+/************************************
+ * LOGOMARCA — ordem de fontes (sem PNG)
+ ************************************/
+const BRAND_SVG_RAW: string = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 28" role="img" aria-label="GUERRA É PAZ — logomarca oficial"></svg>';
+
+/************************************
+ * LOGO em CSS (fornecido pelo usuário) — fallback
+ ************************************/
+function CssBrandLogo({ height = 36 }: { height?: number }) {
+  const scale = height / 70;
+  return (
+    <div className="gp-css-logo" style={{ display: 'inline-flex', alignItems: 'center', transform: `scale(${scale})`, transformOrigin: 'left center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 900 }}>
+        <span style={{ fontSize: 70, color: '#000', fontWeight: 900, letterSpacing: '-2px' }}>GUERRA</span>
+        <div style={{ width: 15 }} />
+        <span style={{ fontSize: 70, color: '#000', fontWeight: 900, letterSpacing: '-2px' }}>É</span>
+        <div style={{ width: 15 }} />
+        <span style={{ fontSize: 70, color: '#DC143C', fontWeight: 900, letterSpacing: '-2px' }}>PAZ</span>
+      </div>
+    </div>
+  );
+}
+
+/************************************
+ * BrandMarkOfficial — prioridade: SVG → CSS
+ ************************************/
+function BrandMarkOfficial() {
+  const [svg] = useState<string>(BRAND_SVG_RAW);
+
+  if (svg) {
+    return (
+      <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9" dangerouslySetInnerHTML={{ __html: svg }} />
+    );
+  }
+
+  return (
+    <span aria-label="GUERRA É PAZ — logomarca oficial" className="inline-flex items-center select-none h-8 sm:h-9">
+      <span className="sm:hidden"><CssBrandLogo height={32} /></span>
+      <span className="hidden sm:inline-flex"><CssBrandLogo height={36} /></span>
+    </span>
+  );
+}
+
+// Estrutura principal da página
+export default function Home() {
+  const [activeTab, setActiveTab] = useState<'feed'>("feed");
   
   return (
-    <div className="min-h-screen bg-gray-100 pb-16 md:pb-0">
-      {/* Header Profissional */}
-      <header className="bg-white sticky top-0 z-50 border-b">
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-4 py-3">
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-white sticky top-0 z-50 border-b p-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
           <BrandMarkOfficial />
-          <div className="flex items-center gap-2">
-            <button aria-label="Buscar" className="p-2 rounded-full hover:bg-gray-100 hidden md:flex">🔍</button>
-            <button aria-label="Notificações" className="relative p-2 rounded-full hover:bg-gray-100 hidden md:flex">
-              🔔
-              <span className="absolute -top-1 -right-1 text-[10px] bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center">3</span>
-            </button>
-            <button className="bg-red-600 text-white font-semibold py-1.5 px-3 rounded-lg text-sm hover:bg-red-700">Entrar</button>
+          <div className="flex gap-2">
+            <button>🔍</button>
+            <button>🔔</button>
           </div>
         </div>
       </header>
-
-      {/* Conteúdo Principal */}
-      <main className="max-w-7xl mx-auto px-4 py-6">
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">GUERRA & PAZ</h1>
-            <p className="text-gray-600">Soberania Intelectual - Layout em Evolução</p>
-          </div>
-          
-          {/* Conteúdo da Tab Ativa */}
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <div className="text-6xl mb-4">{
-              activeTab === 'feed' ? '📰' :
-              activeTab === 'explorar' ? '🔎' :
-              activeTab === 'mapa' ? '🗺️' :
-              activeTab === 'cine' ? '🎬' : '👤'
-            }</div>
-            <h3 className="font-semibold text-xl mb-2">{
-              activeTab === 'feed' ? 'Feed Principal' :
-              activeTab === 'explorar' ? 'Explorar Conteúdo' :
-              activeTab === 'mapa' ? 'Mapa de Conflitos' :
-              activeTab === 'cine' ? 'Cinemateca' : 'Perfil do Usuário'
-            }</h3>
-            <p className="text-gray-600 max-w-md mx-auto">
-              {activeTab === 'feed' ? 'Sistema de posts, comentários e interações em desenvolvimento.' :
-               activeTab === 'explorar' ? 'Ferramentas de descoberta e busca semântica.' :
-               activeTab === 'mapa' ? 'Visualização geoespacial de conflitos globais.' :
-               activeTab === 'cine' ? 'Análise crítica de conteúdo audiovisual.' : 
-               'Perfil personalizado com estatísticas e conquistas.'}
-            </p>
-          </div>
-        </div>
+      
+      <main className="max-w-7xl mx-auto p-4">
+        <p>Layout em construção - Passo 2 (Logomarca adicionada)</p>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-gray-300 py-8 mt-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm">© 2025 Guerra & Paz. Soberania Intelectual.</p>
-        </div>
-      </footer>
-
-      {/* Bottom Tab Bar - Mobile */}
-      <BottomTabBar active={activeTab} setActive={setActiveTab} />
     </div>
   );
 }
