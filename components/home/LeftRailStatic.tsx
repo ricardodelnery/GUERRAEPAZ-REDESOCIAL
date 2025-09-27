@@ -1,3 +1,4 @@
+import Image from 'next/image';
 /* eslint-disable @next/next/no-img-element */
 import Chip from '../common/Chip';
 
@@ -7,7 +8,7 @@ export default function LeftRailStatic() {
       <div className="bg-white p-4 rounded-lg shadow-sm">
         <p className="text-sm text-gray-600">Perfil</p>
         <div className="mt-3 flex items-center gap-3">
-          <img src="https://placehold.co/48x48/e2e8f0/334155?text=VS" className="w-12 h-12 rounded-full" alt="Avatar de Vitor Siqueira" />
+          <Image src="https://placehold.co/48x48/e2e8f0/334155?text=VS" alt="Avatar de Vitor Siqueira" width="{48}" height="{48}" className="w-12 h-12 rounded-full" />
           <div>
             <p className="font-semibold">Vitor Siqueira</p>
             <p className="text-xs text-gray-500">Operador • 1.2k XP</p>

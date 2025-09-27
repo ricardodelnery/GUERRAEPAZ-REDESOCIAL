@@ -1,9 +1,10 @@
+import Image from 'next/image';
 /* eslint-disable @next/next/no-img-element */
 export default function Composer() {
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
       <div className="flex items-start gap-3">
-        <img src="https://placehold.co/48x48/e2e8f0/334155?text=VS" className="w-12 h-12 rounded-full" alt="Avatar do usuário" />
+        <Image src="https://placehold.co/48x48/e2e8f0/334155?text=VS" alt="Avatar do usuário" width="{48}" height="{48}" className="w-12 h-12 rounded-full" />
         <div className="flex-1">
           <textarea
             placeholder="O que estás a pensar?"
