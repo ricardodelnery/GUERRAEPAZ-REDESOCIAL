@@ -1,6 +1,6 @@
 'use client'
 
-export default function BottomTabBar({ active, setActive }: { active: string; setActive: (k: string) => void }) {
+export default function BottomTabBar({ active, setActive }: { active: string; setActive: (_: string) => void }) {
   const Item = ({ id, label, icon }: { id: string; label: string; icon: string }) => (
     <button
       className={`flex flex-col items-center justify-center flex-1 py-2 ${
@@ -17,7 +17,7 @@ export default function BottomTabBar({ active, setActive }: { active: string; se
   return (
     <nav 
       aria-label="Navegação principal" 
-      className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden"
+      className="fixed bottom-0 left-0 right-0 bg-white border-t z-50 md:hidden shadow-lg"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="max-w-7xl mx-auto px-2 grid grid-cols-5">
