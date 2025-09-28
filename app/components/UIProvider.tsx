@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from 'react'
 import Header from './Header'
 import SearchSheet from './SearchSheet'
 import NotifDrawer from './NotifDrawer'
+import Footer from './Footer'
 
 const UIContext = createContext<{
   openSearch: boolean
@@ -25,12 +26,18 @@ export default function UIProvider({ children }: { children: React.ReactNode }) 
   const [openNotif, setOpenNotif] = useState(false)
 
   return (
-    <UIContext.Provider value={{ openSearch, setOpenSearch, openNotif, setOpenNotif }}>
+    <UIContext.Provider value={{ 
+      openSearch, 
+      setOpenSearch, 
+      openNotif, 
+      setOpenNotif 
+    }}>
       <Header 
         onOpenSearch={() => setOpenSearch(true)} 
         onOpenNotif={() => setOpenNotif(true)} 
       />
       {children}
+      <Footer />
       <SearchSheet open={openSearch} onClose={() => setOpenSearch(false)} />
       <NotifDrawer open={openNotif} onClose={() => setOpenNotif(false)} />
     </UIContext.Provider>

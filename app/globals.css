@@ -1,29 +1,66 @@
 @tailwind base;
-
 @tailwind components;
 @tailwind utilities;
 
-/* A11y: foco visível mínimo (AA) */
-:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
-a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+/* Scrollbar customizada para webkit */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-/* SIM-V35 overrides */
-.simv35-isolated header.sticky { display: none !important; }
-.simv35-isolated nav[aria-label="Navegação secundária"] { display: none !important; }
-.simv35-isolated main.max-w-7xl { padding: 0 !important; }
+  /* Animações suaves */
+  .animate-in {
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
 
+  .slide-in-from-bottom-80 {
+    animation-name: slideInFromBottom80;
+  }
 
-/* === INLINED TOKENS (no import) === */
+  .slide-in-from-right-80 {
+    animation-name: slideInFromRight80;
+  }
 
-:root{
-  --brand-red:#dc2626;
-  --brand-ink:#111827;
-  --line:#e5e7eb;
-  --container-px:1rem;
-  --header-y:.5rem;
+  @keyframes slideInFromBottom80 {
+    from {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromRight80 {
+    from {
+      opacity: 0;
+      transform: translateX(80%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
-/* Helpers utilitários */
-.text-brand-red{color:var(--brand-red);}
-.border-brand-red{border-color:var(--brand-red);}
-.bg-brand-red{background-color:var(--brand-red);}
 
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+  }
+}
+
+/* Focus visível para acessibilidade */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #DC143C;
+  outline-offset: 2px;
+}
