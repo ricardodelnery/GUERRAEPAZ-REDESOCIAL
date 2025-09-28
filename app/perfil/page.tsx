@@ -332,7 +332,6 @@ export default function PerfilPage() {
       </main>
 
       {/* BottomTabBar apenas para mobile - SEM PROPS */}
-      <BottomTabBar />
     </div>
   )
 }

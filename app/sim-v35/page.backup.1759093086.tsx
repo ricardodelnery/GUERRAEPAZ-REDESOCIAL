@@ -1,5 +1,5 @@
 'use client';
-import BrandMarkOfficial from './components/BrandMarkOfficial';
+import BrandMarkOfficial from './BrandMarkOfficial';
 
 /** SIM-V35 — esqueleto mínimo
  *  Vamos colar o layout completo em partes pequenas.
