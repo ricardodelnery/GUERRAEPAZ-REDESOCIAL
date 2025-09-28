@@ -57,7 +57,7 @@ function ProfileHeader() {
         </div>
 
         <div className="mt-4 flex gap-2 overflow-x-auto no-scrollbar pb-1">
-          <span className="px-3 py-1 text-xs rounded-full bg-gray-100 whitespace-nowrap">🇧�� Campinas, BR</span>
+          <span className="px-3 py-1 text-xs rounded-full bg-gray-100 whitespace-nowrap">🇧🇷 Campinas, BR</span>
           <span className="px-3 py-1 text-xs rounded-full bg-gray-100 whitespace-nowrap">🎯 Missões: 12</span>
           <span className="px-3 py-1 text-xs rounded-full bg-gray-100 whitespace-nowrap">📚 Contribuições: 34</span>
           <span className="px-3 py-1 text-xs rounded-full bg-gray-100 whitespace-nowrap">🏅 Badges: 6</span>
@@ -331,8 +331,8 @@ export default function PerfilPage() {
         </div>
       </main>
 
-      {/* BottomTabBar apenas para mobile */}
-      <BottomTabBar active="perfil" setActive={() => {}} />
+      {/* BottomTabBar apenas para mobile - SEM PROPS */}
+      <BottomTabBar />
     </div>
   )
 }
