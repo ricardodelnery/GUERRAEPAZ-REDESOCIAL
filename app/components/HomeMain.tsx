@@ -1,12 +1,26 @@
+// app/components/HomeMain.tsx
+'use client'
+
+import { usePosts } from '@/hooks/usePosts'
+import PostCard from './PostCard'
 import ProfileCompact from './ProfileCompact'
 import Shortcuts from './Shortcuts'
 import GroupsAccordion from './GroupsAccordion'
 import StoreCard from './StoreCard'
 import EventsCard from './EventsCard'
 import Recommendations from './Recommendations'
-import PostCard from './PostCard'
 
 export default function HomeMain() {
+  const { data: postsData, isLoading, error } = usePosts()
+
+  if (error) {
+    return (
+      <div className="col-span-12 text-center py-8">
+        <p className="text-red-600">Erro ao carregar posts</p>
+      </div>
+    )
+  }
+
   return (
     <div className="grid grid-cols-12 gap-6 max-w-7xl mx-auto px-4">
       {/* LEFT SIDEBAR - Desktop apenas */}
@@ -62,22 +76,26 @@ export default function HomeMain() {
 
         {/* Feed de Posts */}
         <div className="space-y-4">
-          <PostCard 
-            area="Cinemateca" 
-            time="2d" 
-            author="Especialista em Desinformação" 
-            avatar="https://placehold.co/40x40/A5B4FC/3730A3?text=ED" 
-            title="A narrativa em 'The Social Dilemma' e a Doutrina da Punição" 
-            excerpt="Como enquadramentos emocionais moldam percepções públicas e desviam a atenção de questões estruturais..."
-          />
-          <PostCard 
-            area="Arsenal" 
-            time="1d" 
-            author="Agente Analítico" 
-            avatar="https://placehold.co/40x40/C4B5FD/4338CA?text=AA" 
-            title="Expandindo o Capítulo 6: a 'Guerra de Asfixia'" 
-            excerpt="Políticas de tarifas com impacto na soberania industrial — uma leitura crítica das sanções..."
-          />
+          {isLoading ? (
+            // Loading skeletons
+            Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="bg-white p-4 rounded-lg shadow-sm animate-pulse">
+                <div className="flex gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="h-4 bg-gray-200 rounded w-1/4 mb-2"></div>
+                    <div className="h-3 bg-gray-200 rounded w-1/3"></div>
+                  </div>
+                </div>
+                <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+              </div>
+            ))
+          ) : (
+            postsData?.posts?.map((post: any) => (
+              <PostCard key={post.id} post={post} />
+            ))
+          )}
         </div>
 
         {/* Mobile-only components */}
