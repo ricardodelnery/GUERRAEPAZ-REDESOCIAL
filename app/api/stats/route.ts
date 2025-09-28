@@ -1,6 +1,6 @@
 // app/api/stats/route.ts
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/db'
+import { prisma } from '../../../lib/db'
 
 export async function GET() {
   try {
@@ -13,7 +13,7 @@ export async function GET() {
       prisma.user.count(),
       prisma.post.count(),
       prisma.comment.count(),
-      prisma.mission.count()
+      prisma.post.count()
     ])
 
     return NextResponse.json({

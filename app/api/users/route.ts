@@ -1,6 +1,6 @@
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/db'
+import { prisma } from '../../../lib/db'
 
 // GET /api/users - Listar usuários (para ranking)
 export async function GET(request: NextRequest) {

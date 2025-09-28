@@ -52,7 +52,8 @@ export default function BrandMarkOfficial() {
           const res = await fetch(u);
           if (!res.ok) return false;
           const txt = await res.text();
-          if (!cancelled && /<svg[\\s\\S]*<\\/svg>/i.test(txt)) { setSvg(txt); return true; }
+          // CORREÇÃO DO REGEX: removido escape duplo incorreto
+          if (!cancelled && /<svg[\s\S]*<\/svg>/i.test(txt)) { setSvg(txt); return true; }
         } catch {}
         return false;
       };
