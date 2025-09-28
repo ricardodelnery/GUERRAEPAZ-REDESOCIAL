@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import UIProvider from './components/UIProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Guerra & Paz - Soberania Intelectual',
-  description: 'Plataforma de discussão e debate intelectual',
+  title: 'Guerra & Paz - Plataforma de Análise Crítica',
+  description: 'Soberania intelectual através da gamificação',
 }
 
 export default function RootLayout({
@@ -15,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt">
+      <body className={inter.className}>
+        <UIProvider>
+          {children}
+        </UIProvider>
+      </body>
     </html>
   )
 }
