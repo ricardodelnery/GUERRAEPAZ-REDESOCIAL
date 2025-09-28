@@ -1,7 +1,7 @@
 // app/components/HomeMain.tsx
 'use client'
 
-import { usePosts } from '@/hooks/usePosts'
+import { usePosts } from '../../hooks/usePosts'
 import PostCard from './PostCard'
 import ProfileCompact from './ProfileCompact'
 import Shortcuts from './Shortcuts'
@@ -17,6 +17,12 @@ export default function HomeMain() {
     return (
       <div className="col-span-12 text-center py-8">
         <p className="text-red-600">Erro ao carregar posts</p>
+        <button 
+          onClick={() => window.location.reload()}
+          className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg"
+        >
+          Tentar novamente
+        </button>
       </div>
     )
   }
@@ -91,10 +97,15 @@ export default function HomeMain() {
                 <div className="h-3 bg-gray-200 rounded w-3/4"></div>
               </div>
             ))
-          ) : (
-            postsData?.posts?.map((post: any) => (
+          ) : postsData?.posts?.length > 0 ? (
+            postsData.posts.map((post: any) => (
               <PostCard key={post.id} post={post} />
             ))
+          ) : (
+            <div className="bg-white p-8 rounded-lg shadow-sm text-center">
+              <p className="text-gray-500">Ainda não há posts públicos.</p>
+              <p className="text-sm text-gray-400 mt-1">Seja o primeiro a publicar!</p>
+            </div>
           )}
         </div>
 

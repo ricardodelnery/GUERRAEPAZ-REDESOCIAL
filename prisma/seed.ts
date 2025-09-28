@@ -4,8 +4,23 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
+  console.log('🌱 Iniciando seed do banco de dados...')
+
+  // Criar usuário de teste
+  const testUser = await prisma.user.upsert({
+    where: { email: 'test@guerraepaz.com' },
+    update: {},
+    create: {
+      email: 'test@guerraepaz.com',
+      username: 'testuser',
+      name: 'Utilizador de Teste',
+      level: 'OPERATOR',
+      xp: 1240,
+    },
+  })
+
   // Criar badges básicas
-  const badges = await prisma.badge.createMany({
+  await prisma.badge.createMany({
     data: [
       {
         name: 'Recruta',
@@ -22,7 +37,7 @@ async function main() {
       {
         name: 'Analista',
         description: 'Publicou primeira análise',
-        icon: '��',
+        icon: '🔍',
         rarity: 'COMMON'
       }
     ],
@@ -30,7 +45,7 @@ async function main() {
   })
 
   // Criar missões iniciais
-  const missions = await prisma.mission.createMany({
+  await prisma.mission.createMany({
     data: [
       {
         title: 'Primeiro Post',
@@ -54,12 +69,38 @@ async function main() {
     skipDuplicates: true
   })
 
-  console.log('Seed data criado com sucesso!')
+  // Criar posts de exemplo
+  await prisma.post.createMany({
+    data: [
+      {
+        title: 'Bem-vindo à Guerra & Paz!',
+        content: 'Esta é a primeira publicação na nossa plataforma. Aqui vamos discutir geopolítica, análise de mídia e muito mais.',
+        area: 'FORUM',
+        authorId: testUser.id
+      },
+      {
+        title: 'Análise: Técnicas de Propaganda Moderna',
+        content: 'Um estudo sobre como as técnicas de propaganda evoluíram na era digital...',
+        area: 'ARSENAL',
+        authorId: testUser.id
+      },
+      {
+        title: 'Mapa de Conflitos - Atualização Setembro 2025',
+        content: 'Principais focos de tensão geopolítica este mês...',
+        area: 'MAPA',
+        authorId: testUser.id
+      }
+    ],
+    skipDuplicates: true
+  })
+
+  console.log('✅ Seed data criado com sucesso!')
+  console.log('👤 Utilizador de teste: test@guerraepaz.com')
 }
 
 main()
   .catch((e) => {
-    console.error(e)
+    console.error('❌ Erro no seed:', e)
     process.exit(1)
   })
   .finally(async () => {

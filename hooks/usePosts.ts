@@ -1,14 +1,15 @@
 // hooks/usePosts.ts
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Post, PostArea } from '@prisma/client'
+'use client'
 
-interface CreatePostData {
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+
+export interface CreatePostData {
   title: string
   content: string
-  area: PostArea
+  area: string
 }
 
-export function usePosts(area?: PostArea) {
+export function usePosts(area?: string) {
   return useQuery({
     queryKey: ['posts', area],
     queryFn: async () => {
