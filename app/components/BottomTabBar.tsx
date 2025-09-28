@@ -1,17 +1,31 @@
 'use client'
 
-export default function BottomTabBar({ active, setActive }: { active: string; setActive: (_: string) => void }) {
-  const Item = ({ id, label, icon }: { id: string; label: string; icon: string }) => (
-    <button
-      className={`flex flex-col items-center justify-center flex-1 py-2 ${
-        active === id ? 'text-red-600' : 'text-gray-500'
-      } transition-colors`}
-      onClick={() => setActive(id)}
-      aria-current={active === id ? 'page' : undefined}
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+export default function BottomTabBar() {
+  const pathname = usePathname()
+  const isActive = (path: string) => pathname === path
+
+  const tabs = [
+    { id: 'feed', label: 'Feed', icon: '🏠', path: '/' },
+    { id: 'explorar', label: 'Explorar', icon: '🔎', path: '/explorar' },
+    { id: 'mapa', label: 'Mapa', icon: '🗺️', path: '/mapa' },
+    { id: 'cine', label: 'Cine', icon: '🎬', path: '/cine' },
+    { id: 'perfil', label: 'Perfil', icon: '👤', path: '/perfil' }
+  ]
+
+  const TabItem = ({ tab }: { tab: typeof tabs[0] }) => (
+    <Link
+      href={tab.path}
+      className={`flex flex-col items-center justify-center flex-1 py-2 transition-colors ${
+        isActive(tab.path) ? 'text-red-600' : 'text-gray-500'
+      }`}
+      aria-current={isActive(tab.path) ? 'page' : undefined}
     >
-      <span className="text-lg" aria-hidden>{icon}</span>
-      <span className="text-[11px] leading-none mt-1">{label}</span>
-    </button>
+      <span className="text-lg" aria-hidden>{tab.icon}</span>
+      <span className="text-[11px] leading-none mt-1">{tab.label}</span>
+    </Link>
   )
 
   return (
@@ -21,11 +35,9 @@ export default function BottomTabBar({ active, setActive }: { active: string; se
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="max-w-7xl mx-auto px-2 grid grid-cols-5">
-        <Item id="feed" label="Feed" icon="🏠" />
-        <Item id="explorar" label="Explorar" icon="🔎" />
-        <Item id="mapa" label="Mapa" icon="🗺️" />
-        <Item id="cine" label="Cine" icon="🎬" />
-        <Item id="perfil" label="Perfil" icon="👤" />
+        {tabs.map((tab) => (
+          <TabItem key={tab.id} tab={tab} />
+        ))}
       </div>
     </nav>
   )
