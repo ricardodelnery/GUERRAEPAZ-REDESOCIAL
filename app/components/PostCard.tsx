@@ -1,4 +1,4 @@
-import Image from "next/image'
+import Image from 'next/image'
 
 export function PostCard({ area, author, avatar, title, excerpt, time }: { 
   area: string; author: string; avatar: string; title: string; excerpt: string; time: string; 

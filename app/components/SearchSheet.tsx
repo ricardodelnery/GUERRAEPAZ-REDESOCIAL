@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from "react'
+import { useEffect } from 'react'
 
 export default function SearchSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {

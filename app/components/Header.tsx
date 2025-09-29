@@ -1,5 +1,5 @@
 'use client'
-import BrandMarkOfficial from "./BrandMarkOfficial'
+import BrandMarkOfficial from './BrandMarkOfficial'
 
 export default function Header({ onOpenSearch, onOpenNotif }: { 
   onOpenSearch: () => void; 

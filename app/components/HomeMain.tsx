@@ -1,6 +1,6 @@
 'use client'
-import { useState } from "react'
-import { PostCard } from "./PostCard'
+import { useState } from 'react'
+import { PostCard } from './PostCard'
 
 // Dados mock compatíveis com a interface do PostCard
 const mockPosts = [
