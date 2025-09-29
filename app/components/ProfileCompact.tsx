@@ -1,3 +1,4 @@
+import Image from 'next/image'
 export default function ProfileCompact() {
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">

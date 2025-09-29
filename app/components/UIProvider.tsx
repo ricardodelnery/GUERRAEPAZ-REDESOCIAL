@@ -1,45 +1,30 @@
 'use client'
-
 import { createContext, useContext, useState } from 'react'
-import Header from './Header'
-import SearchSheet from './SearchSheet'
-import NotifDrawer from './NotifDrawer'
-import Footer from './Footer'
 
-const UIContext = createContext<{
-  openSearch: boolean
-  setOpenSearch: (v: boolean) => void
-  openNotif: boolean
-  setOpenNotif: (v: boolean) => void
-} | null>(null)
-
-export function useUI() {
-  const context = useContext(UIContext)
-  if (!context) {
-    throw new Error('useUI must be used within UIProvider')
-  }
-  return context
+type UiContextType = {
+  searchOpen: boolean
+  setSearchOpen: (_: boolean) => void
+  notifOpen: boolean  
+  setNotifOpen: (_: boolean) => void
 }
 
-export default function UIProvider({ children }: { children: React.ReactNode }) {
-  const [openSearch, setOpenSearch] = useState(false)
-  const [openNotif, setOpenNotif] = useState(false)
+const UiContext = createContext<UiContextType | undefined>(undefined)
+
+export function UIProvider({ children }: { children: React.ReactNode }) {
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [notifOpen, setNotifOpen] = useState(false)
 
   return (
-    <UIContext.Provider value={{ 
-      openSearch, 
-      setOpenSearch, 
-      openNotif, 
-      setOpenNotif 
-    }}>
-      <Header 
-        onOpenSearch={() => setOpenSearch(true)} 
-        onOpenNotif={() => setOpenNotif(true)} 
-      />
+    <UiContext.Provider value={{ searchOpen, setSearchOpen, notifOpen, setNotifOpen }}>
       {children}
-      <Footer />
-      <SearchSheet open={openSearch} onClose={() => setOpenSearch(false)} />
-      <NotifDrawer open={openNotif} onClose={() => setOpenNotif(false)} />
-    </UIContext.Provider>
+    </UiContext.Provider>
   )
+}
+
+export function useUI() {
+  const context = useContext(UiContext)
+  if (!context) {
+    throw new Error('useUI must be used within a UIProvider')
+  }
+  return context
 }

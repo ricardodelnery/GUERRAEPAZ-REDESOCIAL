@@ -1,9 +1,4 @@
-'use client'
-
-export default function BottomTabBar({ active, setActive }: { 
-  active: string; 
-  setActive: (k: string) => void 
-}) {
+export function BottomTabBar({ active, setActive }: { active: string; setActive: (key: string) => void }) {
   const Item = ({ id, label, icon }: { id: string; label: string; icon: string }) => (
     <button
       className={`flex flex-col items-center justify-center flex-1 py-2 ${active === id ? 'text-red-600' : 'text-gray-500'}`}

@@ -1,39 +1,35 @@
-// app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '../../../lib/db'
+import rateLimit from '@/lib/rate-limit'
 
-// GET /api/users - Listar usuários (para ranking)
+const limiter = rateLimit({
+  interval: 60000,
+  uniqueTokenPerInterval: 500,
+})
+
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
-    const limit = parseInt(searchParams.get('limit') || '10')
+    // Rate limiting
+    await limiter.check(20, request.ip ?? 'unknown')
+    
+    // Mock data para desenvolvimento
+    const mockUsers = [
+      { id: 1, username: 'operador1', level: 'Operador', xp: 1240 },
+      { id: 2, username: 'analista2', level: 'Agente', xp: 2850 }
+    ]
+    
+    return NextResponse.json({ users: mockUsers })
+    
+  } catch (error: any) {
+    if (error.message === 'Rate limit exceeded') {
+      return NextResponse.json(
+        { error: 'Muitas requisições. Tente novamente em 1 minuto.' },
+        { status: 429 }
+      )
+    }
 
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        username: true,
-        name: true,
-        avatar: true,
-        level: true,
-        xp: true,
-        _count: {
-          select: {
-            posts: true,
-            comments: true
-          }
-        }
-      },
-      orderBy: {
-        xp: 'desc'
-      },
-      take: limit
-    })
-
-    return NextResponse.json(users)
-  } catch (error) {
-    console.error('Error fetching users:', error)
+    console.error('Erro na API de users:', error)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Erro interno do servidor' },
       { status: 500 }
     )
   }

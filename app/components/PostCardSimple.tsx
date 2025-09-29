@@ -1,3 +1,4 @@
+import Image from 'next/image'
 'use client'
 
 interface PostCardSimpleProps {
@@ -14,7 +15,7 @@ export default function PostCardSimple({ area, author, avatar, title, excerpt, t
     <article className="bg-white p-4 rounded-lg shadow-sm">
       <div className="flex justify-between">
         <div className="flex gap-3">
-          <img src={avatar} className="w-10 h-10 rounded-full" alt={`Avatar de ${author}`} />
+          <Image src={avatar} className="w-10 h-10 rounded-full" alt={`Avatar de ${author}`} / width={40} height={40} />
           <div>
             <p className="font-semibold text-sm">{author}</p>
             <p className="text-xs text-gray-500">{time} • {area}</p>

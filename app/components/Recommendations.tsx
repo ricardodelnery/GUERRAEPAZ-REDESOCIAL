@@ -1,3 +1,4 @@
+import Image from 'next/image'
 export default function Recommendations() {
   const users = [
     { name: "Operador Perspicaz", avatar: "https://placehold.co/32x32/FDBA74/C2410C?text=OP" },
