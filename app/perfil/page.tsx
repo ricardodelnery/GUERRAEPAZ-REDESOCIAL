@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import BottomTabBar from '../components/BottomTabBar'
 
 function ProgressBar({ value }: { value: number }) {
   return (
@@ -331,7 +330,6 @@ export default function PerfilPage() {
         </div>
       </main>
 
-      {/* BottomTabBar apenas para mobile - SEM PROPS */}
     </div>
   )
 }

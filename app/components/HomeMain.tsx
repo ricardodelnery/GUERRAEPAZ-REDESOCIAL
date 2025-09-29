@@ -84,7 +84,6 @@ export default function HomeMain() {
           {posts.map((post: any) => (
             <PostCard 
               key={post.id}
-              area={post.area}
               author={post.author}
               avatar={post.avatar}
               title={post.title}
