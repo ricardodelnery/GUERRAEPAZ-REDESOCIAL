@@ -2,8 +2,8 @@ import { UiProvider } from './context/UiContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { BottomTabBar } from './components/BottomTabBar'
-import { SearchSheet } from './components/SearchSheet'
-import { NotifDrawer } from './components/NotifDrawer'
+import SearchSheet from './components/SearchSheet'
+import NotifDrawer from './components/NotifDrawer'
 import './globals.css'
 
 export default function RootLayout({
