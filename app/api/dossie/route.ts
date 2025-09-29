@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { PostSchema } from '@/lib/validation-schemas'
+import { DossieSchema } from '@/lib/validation-schemas'
 import rateLimit from '@/lib/rate-limit'
 import { sanitizeHTML, sanitizeUserInput } from '@/lib/sanitize'
 
@@ -10,13 +10,11 @@ const limiter = rateLimit({
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limiting
-    await limiter.check(10, request.ip ?? 'unknown')
+    await limiter.check(5, request.ip ?? 'unknown')
     
     const body = await request.json()
     
-    // Validação robusta
-    const validationResult = PostSchema.safeParse(body)
+    const validationResult = DossieSchema.safeParse(body)
     if (!validationResult.success) {
       return NextResponse.json(
         { 
@@ -27,28 +25,29 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Sanitização dos dados
-    const { title, content, area, category } = validationResult.data
+    const { title, content, sources, conflictId } = validationResult.data
+    
+    // Sanitização
     const sanitizedTitle = sanitizeUserInput(title)
     const sanitizedContent = sanitizeHTML(content)
-    const sanitizedCategory = sanitizeUserInput(category)
+    const sanitizedSources = sources.map(url => url.trim())
     
-    // Processar post (simulação)
-    const newPost = {
+    // Processar dossiê
+    const newDossie = {
       id: Date.now().toString(),
       title: sanitizedTitle,
       content: sanitizedContent,
-      area,
-      category: sanitizedCategory,
+      sources: sanitizedSources,
+      conflictId,
       createdAt: new Date().toISOString(),
-      authorId: 'user-id-from-auth' // Será obtido do contexto de autenticação
+      status: 'pending_review'
     }
     
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Post criado com sucesso',
-        post: newPost
+        message: 'Dossiê criado com sucesso',
+        dossie: newDossie
       },
       { status: 201 }
     )
@@ -61,7 +60,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.error('Erro na API de posts:', error)
+    console.error('Erro na API de dossiê:', error)
     return NextResponse.json(
       { error: 'Erro interno do servidor' },
       { status: 500 }
@@ -71,21 +70,9 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    await limiter.check(30, request.ip ?? 'unknown')
+    await limiter.check(20, request.ip ?? 'unknown')
     
-    // Simulação de busca de posts
-    const posts = [
-      {
-        id: '1',
-        title: 'Post de exemplo',
-        content: 'Conteúdo seguro',
-        area: 'ARSENAL',
-        category: 'Análise',
-        createdAt: new Date().toISOString()
-      }
-    ]
-    
-    return NextResponse.json({ posts })
+    return NextResponse.json({ dossies: [] })
     
   } catch (error: any) {
     if (error.message === 'Rate limit exceeded') {
@@ -95,9 +82,8 @@ export async function GET(request: NextRequest) {
       )
     }
     
-    console.error('Erro ao buscar posts:', error)
     return NextResponse.json(
-      { error: 'Erro ao buscar posts' },
+      { error: 'Erro ao buscar dossiês' },
       { status: 500 }
     )
   }

@@ -1,24 +1,35 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-const WINDOW_MS = 10_000;
-const LIMIT = 30;
-const store: Record<string, { ts: number; count: number }> = {};
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-export function middleware(req: NextRequest) {
-  const ip = req.ip ?? req.headers.get('x-forwarded-for') ?? 'unknown';
-  const now = Date.now();
-  const k = String(ip);
-  const entry = store[k] ?? { ts: now, count: 0 };
-  if (now - entry.ts > WINDOW_MS) { entry.ts = now; entry.count = 0; }
-  entry.count += 1; store[k] = entry;
+export function middleware(request: NextRequest) {
+  // Headers de segurança
+  const response = NextResponse.next()
+  
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  
+  // CSP dinâmico baseado no ambiente
+  const csp = `
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+  `.replace(/\s{2,}/g, ' ').trim()
 
-  if (entry.count > LIMIT) {
-    console.log('[RATE-LIMIT]', k, entry.count);
-    return new NextResponse('Too Many Requests', { status: 429, headers: { 'X-RateLimit-Window': String(WINDOW_MS), 'X-RateLimit-Limit': String(LIMIT) }});
-  }
-  return NextResponse.next();
+  response.headers.set('Content-Security-Policy', csp)
+
+  return response
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
-};
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
+}
