@@ -1,22 +1,22 @@
 import Image from 'next/image'
-export default function StoreCard() {
+
+export function StoreCard() {
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
-      <h4 className="font-semibold text-sm mb-2">Loja</h4>
-      <p className="text-xs text-gray-600 mb-3">Adquira o livro e ative seu acesso de Operador.</p>
-      
-      <div className="flex gap-3">
-        <img 
-          src="https://placehold.co/80x120/111827/FFFFFF?text=Guerra+%26+Paz" 
+      <h4 className="font-semibold">Loja</h4>
+      <p className="text-sm text-gray-600 mt-1">Adquira o livro e ative seu acesso de Operador.</p>
+      <div className="mt-3 flex gap-2">
+        <Image 
+          src="https://placehold.co/150x220/111827/FFFFFF?text=Guerra+%26+Paz" 
+          width={80}
+          height={112}
           alt="Capa do livro Guerra & Paz" 
-          className="w-20 rounded-md flex-shrink-0"
+          className="w-20 rounded-md" 
         />
-        <div className="flex flex-col justify-center min-w-0">
-          <p className="font-bold text-sm">Guerra & Paz</p>
+        <div className="flex flex-col justify-center">
+          <p className="font-bold">Guerra & Paz</p>
           <p className="text-xs text-gray-500 mb-2">Decodificando a Propaganda</p>
-          <button className="bg-red-600 text-white text-xs font-semibold px-3 py-2 rounded-lg hover:bg-red-700 transition-colors whitespace-nowrap">
-            Comprar Agora
-          </button>
+          <button className="bg-red-600 text-white text-sm font-semibold px-3 py-2 rounded-lg hover:bg-red-700">Comprar Agora</button>
         </div>
       </div>
     </div>
