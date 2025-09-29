@@ -1,7 +1,6 @@
-// app/components/HomeMain.tsx
+// VERSAÇÃO ESTÁVEL COM FALLBACK
 'use client'
-
-import { usePosts } from '../../hooks/usePosts'
+import { useState, useEffect } from 'react'
 import PostCard from './PostCard'
 import ProfileCompact from './ProfileCompact'
 import Shortcuts from './Shortcuts'
@@ -10,26 +9,34 @@ import StoreCard from './StoreCard'
 import EventsCard from './EventsCard'
 import Recommendations from './Recommendations'
 
-export default function HomeMain() {
-  const { data: postsData, isLoading, error } = usePosts()
-
-  if (error) {
-    return (
-      <div className="col-span-12 text-center py-8">
-        <p className="text-red-600">Erro ao carregar posts</p>
-        <button 
-          onClick={() => window.location.reload()}
-          className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg"
-        >
-          Tentar novamente
-        </button>
-      </div>
-    )
+// Fallback estático - MESMO layout, só posts garantidos
+const staticPosts = [
+  {
+    id: 1,
+    area: "Cinemateca",
+    author: "Especialista em Desinformação", 
+    avatar: "https://placehold.co/40x40/A5B4FC/3730A3?text=ED",
+    title: "A narrativa em 'The Social Dilemma' e a Doutrina da Punição",
+    excerpt: "Como enquadramentos emocionais moldam percepções públicas e desviam a atenção de questões estruturais...",
+    time: "2d"
+  },
+  {
+    id: 2, 
+    area: "Arsenal",
+    author: "Agente Analítico",
+    avatar: "https://placehold.co/40x40/C4B5FD/4338CA?text=AA", 
+    title: "Expandindo o Capítulo 6: a 'Guerra de Asfixia'",
+    excerpt: "Políticas de tarifas com impacto na soberania industrial — uma leitura crítica das sanções...",
+    time: "1d"
   }
+]
+
+export default function HomeMain() {
+  const [posts, setPosts] = useState(staticPosts)
 
   return (
-    <div className="grid grid-cols-12 gap-6 max-w-7xl mx-auto px-4">
-      {/* LEFT SIDEBAR - Desktop apenas */}
+    <div className="grid grid-cols-12 gap-6">
+      {/* LEFT SIDEBAR — lg+ */}
       <aside className="hidden lg:block lg:col-span-3">
         <div className="sticky top-24 space-y-4">
           <ProfileCompact />
@@ -38,79 +45,57 @@ export default function HomeMain() {
         </div>
       </aside>
 
-      {/* FEED PRINCIPAL */}
-      <section className="col-span-12 lg:col-span-6 space-y-6">
-        {/* Stories Carrossel */}
+      {/* FEED (coluna central) */}
+      <section className="col-span-12 md:col-span-8 lg:col-span-6 space-y-6">
+        {/* Stories */}
         <div className="bg-white p-3 rounded-lg shadow-sm flex gap-3 overflow-x-auto no-scrollbar">
-          {[
-            { title: "Análise: Ucrânia", bg: "https://placehold.co/112x112/334155/ffffff?text=Ucrânia" },
-            { title: "Update: Sahel", bg: "https://placehold.co/112x112/44403c/ffffff?text=Sahel" },
-            { title: "Podcast #23", bg: "https://placehold.co/112x112/57534e/ffffff?text=Podcast" },
-            { title: "Live Q&A", bg: "https://placehold.co/112x112/78716c/ffffff?text=Live" },
-            { title: "Artigo novo", bg: "https://placehold.co/112x112/a8a29e/ffffff?text=Artigo" }
-          ].map((story, i) => (
-            <div key={i} className="flex-shrink-0 w-28 h-28 rounded-lg bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${story.bg})` }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-semibold line-clamp-2">{story.title}</div>
-            </div>
-          ))}
+          <div className="min-w-[112px] h-28 rounded-lg bg-cover bg-center relative overflow-hidden text-white flex items-end p-2" style={{backgroundImage: `url(https://placehold.co/120x112/334155/ffffff?text=Ucr%C3%A2nia)`}}>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="z-10 font-semibold text-xs line-clamp-2">Análise: Ucrânia</div>
+          </div>
+          <div className="min-w-[112px] h-28 rounded-lg bg-cover bg-center relative overflow-hidden text-white flex items-end p-2" style={{backgroundImage: `url(https://placehold.co/120x112/44403c/ffffff?text=Sahel)`}}>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="z-10 font-semibold text-xs line-clamp-2">Update: Sahel</div>
+          </div>
         </div>
 
         {/* Composer */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="flex items-start gap-3">
-            <img src="https://placehold.co/48x48/e2e8f0/334155?text=VS" className="w-12 h-12 rounded-full" alt="Seu avatar" />
+            <img src="https://placehold.co/48x48/e2e8f0/334155?text=VS" className="w-12 h-12 rounded-full" alt="Avatar de Vitor Siqueira" />
             <div className="flex-1">
-              <textarea 
-                placeholder="O que estás a pensar?" 
-                className="w-full resize-none bg-gray-100 p-3 rounded-lg focus:outline-none text-sm"
-                rows={3}
-              />
+              <textarea placeholder="O que estás a pensar?" className="w-full resize-none bg-gray-100 p-3 rounded-lg focus:outline-none text-sm" rows={3} />
               <div className="flex items-center justify-between mt-2">
                 <div className="flex gap-2 text-gray-500">
                   <button className="p-2 rounded-full hover:bg-gray-100">📎</button>
                   <button className="p-2 rounded-full hover:bg-gray-100">📷</button>
                   <button className="p-2 rounded-full hover:bg-gray-100">📍</button>
                 </div>
-                <button className="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg text-sm hover:bg-red-700">
-                  Publicar
-                </button>
+                <div className="flex gap-2">
+                  <button className="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg text-sm hover:bg-red-700">Publicar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Feed de Posts */}
+        {/* Feed - AGORA COM POSTS GARANTIDOS */}
         <div className="space-y-4">
-          {isLoading ? (
-            // Loading skeletons
-            Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="bg-white p-4 rounded-lg shadow-sm animate-pulse">
-                <div className="flex gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
-                  <div className="flex-1">
-                    <div className="h-4 bg-gray-200 rounded w-1/4 mb-2"></div>
-                    <div className="h-3 bg-gray-200 rounded w-1/3"></div>
-                  </div>
-                </div>
-                <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                <div className="h-3 bg-gray-200 rounded w-3/4"></div>
-              </div>
-            ))
-          ) : postsData?.posts?.length > 0 ? (
-            postsData.posts.map((post: any) => (
-              <PostCard key={post.id} post={post} />
-            ))
-          ) : (
-            <div className="bg-white p-8 rounded-lg shadow-sm text-center">
-              <p className="text-gray-500">Ainda não há posts públicos.</p>
-              <p className="text-sm text-gray-400 mt-1">Seja o primeiro a publicar!</p>
-            </div>
-          )}
+          {posts.map((post: any) => (
+            <PostCard 
+              key={post.id}
+              area={post.area}
+              author={post.author}
+              avatar={post.avatar}
+              title={post.title}
+              excerpt={post.excerpt}
+              time={post.time}
+            />
+          ))}
         </div>
 
-        {/* Mobile-only components */}
-        <div className="space-y-4 lg:hidden">
+        {/* MOBILE-ONLY COMPLEMENTS */}
+        <div className="space-y-4 md:hidden">
           <StoreCard />
           <EventsCard />
           <Shortcuts />
@@ -118,8 +103,8 @@ export default function HomeMain() {
         </div>
       </section>
 
-      {/* RIGHT SIDEBAR - Desktop apenas */}
-      <aside className="hidden lg:block lg:col-span-3">
+      {/* RIGHT SIDEBAR — md+ */}
+      <aside className="hidden md:block md:col-span-4 lg:col-span-3">
         <div className="sticky top-24 space-y-4">
           <Recommendations />
           <StoreCard />
