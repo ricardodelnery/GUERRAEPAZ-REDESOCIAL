@@ -1,2 +1,0 @@
-[MP-HOME-2] 2025-09-25T22:56:31Z bottom-tab adicionada e main com padding
-31:        <main className="max-w-7xl mx-auto px-4 pt-4 pb-24 md:pb-6">{children}</main>

@@ -1,5 +1,0 @@
-[MP-HOME-1] 2025-09-25T22:46:07Z header+footer mínimos criados em app/
-[MP-Header-1] BrandMarkOfficial criado
-[MP-Header-2] Marca ligada ao header
-[MP-Main-Grid-1] Grid base criado
-sub-nav OK

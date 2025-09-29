@@ -1,2 +1,0 @@
-app/layout.tsx(18,14): error TS17008: JSX element 'div' has no corresponding closing tag.
-app/layout.tsx(34,5): error TS1109: Expression expected.
