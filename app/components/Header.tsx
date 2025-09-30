@@ -1,18 +1,14 @@
 'use client'
-import BrandMarkOfficial from './BrandMarkOfficial'
 
-export default function Header({ onOpenSearch, onOpenNotif }: { 
-  onOpenSearch: () => void; 
-  onOpenNotif: () => void 
-}) {
+import { BrandMarkOfficial } from './BrandLogo'
+
+export function Header({ onOpenSearch, onOpenNotif }: { onOpenSearch: () => void; onOpenNotif: () => void }) {
   return (
     <header className="bg-white sticky top-0 z-50 border-b">
       <div className="flex items-center justify-between max-w-7xl mx-auto px-4 py-3">
-        {/* Marca */}
         <div className="flex items-center gap-3">
           <BrandMarkOfficial />
         </div>
-        {/* Ações */}
         <div className="flex items-center gap-1">
           <button aria-label="Buscar" className="p-2 rounded-full hover:bg-gray-100" onClick={onOpenSearch}>🔎</button>
           <button aria-label="Notificações" className="relative p-2 rounded-full hover:bg-gray-100" onClick={onOpenNotif}>
@@ -22,7 +18,6 @@ export default function Header({ onOpenSearch, onOpenNotif }: {
           <button className="bg-red-600 text-white font-semibold py-1.5 px-3 rounded-lg text-sm">Entrar</button>
         </div>
       </div>
-      {/* Sub-nav visível só em md+ */}
       <nav aria-label="Navegação secundária" className="hidden md:block bg-white border-t">
         <div className="max-w-7xl mx-auto px-4 flex items-center gap-6 py-2 text-sm">
           <a className="text-red-600 font-medium" href="#">Feed</a>

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "functions": {
+    "app/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_APP_ENV": "@app_env"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_APP_ENV": "@app_env"
+    }
+  },
+  "regions": ["gru1"],
+  "public": false
+}

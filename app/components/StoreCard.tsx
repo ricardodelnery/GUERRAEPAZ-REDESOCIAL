@@ -1,4 +1,4 @@
-import Image from 'next/image'
+'use client'
 
 export function StoreCard() {
   return (
@@ -6,13 +6,7 @@ export function StoreCard() {
       <h4 className="font-semibold">Loja</h4>
       <p className="text-sm text-gray-600 mt-1">Adquira o livro e ative seu acesso de Operador.</p>
       <div className="mt-3 flex gap-2">
-        <Image 
-          src="https://placehold.co/150x220/111827/FFFFFF?text=Guerra+%26+Paz" 
-          width={80}
-          height={112}
-          alt="Capa do livro Guerra & Paz" 
-          className="w-20 rounded-md" 
-        />
+        <img src="https://placehold.co/150x220/111827/FFFFFF?text=Guerra+%26+Paz" alt="Capa do livro Guerra & Paz" className="w-20 rounded-md" />
         <div className="flex flex-col justify-center">
           <p className="font-bold">Guerra & Paz</p>
           <p className="text-xs text-gray-500 mb-2">Decodificando a Propaganda</p>

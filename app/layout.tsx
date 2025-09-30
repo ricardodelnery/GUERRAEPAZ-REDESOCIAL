@@ -1,10 +1,10 @@
-import { UiProvider } from './context/UiContext'
-import HeaderWrapper from './components/HeaderWrapper'
-import Footer from './components/Footer'
-import { BottomTabBar } from './components/BottomTabBar'
-import SearchSheet from './components/SearchSheet'
-import NotifDrawer from './components/NotifDrawer'
+import type { Metadata } from 'next'
 import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'Guerra & Paz - Plataforma de Análise Crítica',
+  description: 'Soberania intelectual através da análise crítica de informação',
+}
 
 export default function RootLayout({
   children,
@@ -13,17 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body>
-        <UiProvider>
-          <HeaderWrapper />
-          <main className="min-h-screen bg-gray-50">
-            {children}
-          </main>
-          <Footer />
-          <BottomTabBar active="feed" setActive={() => {}} />
-          <SearchSheet open={false} onClose={() => {}} />
-          <NotifDrawer open={false} onClose={() => {}} />
-        </UiProvider>
+      <body className="min-h-screen bg-gray-100">
+        {children}
       </body>
     </html>
   )
