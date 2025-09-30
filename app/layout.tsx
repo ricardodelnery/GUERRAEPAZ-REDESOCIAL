@@ -1,5 +1,5 @@
 import { UiProvider } from './context/UiContext'
-import Header from './components/Header'
+import HeaderWrapper from './components/HeaderWrapper'
 import Footer from './components/Footer'
 import { BottomTabBar } from './components/BottomTabBar'
 import SearchSheet from './components/SearchSheet'
@@ -15,23 +15,14 @@ export default function RootLayout({
     <html lang="pt">
       <body>
         <UiProvider>
-          {/* HEADER ÚNICO - Shell Global */}
-          <Header />
-          
-          {/* CONTEÚDO PRINCIPAL */}
+          <HeaderWrapper />
           <main className="min-h-screen bg-gray-50">
             {children}
           </main>
-          
-          {/* FOOTER ÚNICO - Shell Global */}
           <Footer />
-          
-          {/* TABBAR MOBILE - Shell Global */}
-          <BottomTabBar />
-          
-          {/* MODAIS GLOBAIS - Shell Global */}
-          <SearchSheet />
-          <NotifDrawer />
+          <BottomTabBar active="feed" setActive={() => {}} />
+          <SearchSheet open={false} onClose={() => {}} />
+          <NotifDrawer open={false} onClose={() => {}} />
         </UiProvider>
       </body>
     </html>
